@@ -1,243 +1,84 @@
 ---
-title: "Bioestadística en R"
-subtitle: Workshop 2025
-format: html
-lang: es
-execute: 
-  warning: false
-  message: false
-  error: false
+title: "Statistics and Data Science Training for CBB"
+subtitle: "A teaching concept for PhD researchers in the Campus Research Alliance Cognition, Brain and Behavior"
+toc: false
 ---
 
-## Anuncios
+PhD researchers in CBB come from psychology, behavioural and cognitive biology, systems neuroscience and data science. They collect very different data, from infant eye-tracking and primate field observations to neural recordings and video tracking, but they share the same journey: **get the data in shape, model it honestly, and publish it**.
 
-::: {.callout-important}
--   **17.05.2025**:
-    -   El video de la clase del 17.05 ya se encuentra en línea.
-    
-    -   Recuerda que la fecha límite de entrega del trabajo final es el 21.06 hasta la medianoche.
+This site describes a modular training programme built around that journey, and how it connects to statistical consulting.
 
--   **15.05.2025**:
-    -   El video de la clase del 15.05 ya se encuentra en línea.
+## Three tracks, one path
 
--   **10.05.2025**:
-    -   El video de la clase del 10.05 ya se encuentra en línea.
+::: {.grid}
 
--   **08.05.2025**:
-    -   El video de la clase del 08.05 ya se encuentra en línea.
+::: {.g-col-12 .g-col-md-4}
+::: {.card-box .track-a}
+### A. Data skills
 
--   **26.04.2025**: 
-    -   El video de la clase del 26.04 ya se encuentra en línea.
-
--   **24.04.2025**:
-    -   El video de la clase del 24.04 ya se encuentra en línea.
-
--   **12.04.2025**:
-    -   Bienvenidos!
-    -   El video de la clase se encuentra ya en línea, chequea la pestaña de Recursos
-
-<!-- Note that there are five types of callouts, including: -->
-<!-- `note`, `warning`, `important`, `tip`, and `caution`. -->
+R programming, data wrangling, exploration and visualisation, and reproducible workflows. Modular: students skip what they already master.
+:::
 :::
 
+::: {.g-col-12 .g-col-md-4}
+::: {.card-box .track-b}
+### B. Statistical modelling
 
-## Descripción del curso:
-
-El presente curso de estadística tiene cómo propósito el dar un enfoque práctico de metodologías estadísticas comúnmente empleadas en el campo de la biología y la agricultura sin hacer mayor énfasis en teoría y resolución de problemas a mano como usualmente ocurre en el desenvolvimiento de contenidos de cursos tradicionales en estadística. En su lugar, el currículum aquí propuesto busca el dar una visión práctica a sus participantes de cómo los datos pueden ser analizados en base a un orden cronológico dentro de una investigación empezando por la definición de la pregunta objeto de esta, pasando por la decisión del diseño experimental más adecuado y finalizando con su correcto análisis e interpretación de los resultados. En mayor detalle, se abarcan además problemas comunes en el análisis de datos como lo son los análisis exploratorios de carácter formal tales como estadísticos descriptivos, patrones de pérdida de observaciones y visualizaciones; y aquellos de carácter operacional como la preparación y limpieza de datos, buenas prácticas de documentación y programación. Es por ello por lo que se alienta a los participantes a usar sus propios datos a la par de los ejemplos que se pondrán a disposición con el fin de aprovechar el carácter práctico del curso que incluye un comprensivo recorrido en el uso de R, el cual es al momento el lenguaje de programación estadística de mayor predilección en diversas ramas de las ciencias biológicas tanto en la academia como en la industria.
-
-## Requisitos:
-
--   Computador con al menos 2 GB de RAM y **procesador de 64 bits**
-
-## Duración:
-
-20 horas de clases online en tiempo real, y
-
-20 horas autónomo-prácticas, dando un total de
-
-**40 horas**
-
-## Modalidad:
-
-100% Online
-
-## Horario:
-
-Sábados: 12 y 26 de abril, 10 y 17 de mayo de 9H00 a 12H30
-
-Jueves: 24 de abril, 8 y 15 de mayo de 18H30 a 20H30
-
-
-```{r}
-#| echo: false
-
-invisible(Sys.setlocale("LC_TIME", "es_ES.UTF-8"))
-library(calendR)
-
-
-calendR(year = 2025, month = 4,
-        start = "M",
-        special.days = c(12, 24, 26),
-        special.col = "#bfe2f2",
-        text = c("9H00 a 12H30", "18H30 a 20H30", "9H00 a 12H30"),
-        text.pos = c(12, 24, 26),
-        text.size = 2.5,
-        text.col = "blue")
-
-#| echo: false
-
-calendR(year = 2025, month = 5,
-        start = "M",
-        special.days = c(8, 10, 15, 17),
-        special.col = "#bfe2f2",
-        text = c("18H30 a 20H30", "9H00 a 12H30", "18H30 a 20H30", "9H00 a 12H30"),
-        text.pos = c(8,10,15,17),
-        text.size = 2.5,
-        text.col = "blue")
-```
-
-::: {.callout-note}
-**No hay clases los feriados de Semana Santa y Día del Trabajo.**
+From linear models to GLMs and mixed models, plus study design and simulation-based power analysis.
+:::
 :::
 
-## Contenidos del curso
+::: {.g-col-12 .g-col-md-4}
+::: {.card-box .track-c}
+### C. From analysis to publication
 
+Reporting statistics, publication-ready figures and tables, reproducible manuscripts and open science.
+:::
+:::
 
+:::
 
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo                                                             | Contenido                                                |
-+====================================================================+==========================================================+
-| Módulo 1: Generalidades e Introducción a R                         | 1.  Generalidades                                        |
-|                                                                    |                                                          |
-| Duración: 2 horas                                                  | 2.  Introducción a R                                     |
-|                                                                    |                                                          |
-|                                                                    | 3.  Tipos de datos en R                                  |
-|                                                                    |                                                          |
-|                                                                    | 4.  Operadores en R                                      |
-|                                                                    |                                                          |
-|                                                                    | 5.  Tipos de objetos en R                                |
-|                                                                    |                                                          |
-|                                                                    | 6.  Paquetes y librerías                                 |
-|                                                                    |                                                          |
-|                                                                    | 7.  Operaciones básicas                                  |
-|                                                                    |                                                          |
-|                                                                    | 8.  Operaciones estadísticas básicas                     |
-|                                                                    |                                                          |
-|                                                                    | 9.  Estadísticos descriptivos                            |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 2: Proyectos en R y buenas prácticas de programación        | 1.  Proyectos en R                                       |
-|                                                                    |                                                          |
-| Duración: 0.5 horas                                                | 2.  Reglas básicas para programar y nombrar objetos en R |
-|                                                                    |                                                          |
-|                                                                    | 3.  Buenas prácticas de programación                     |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 3: Introducción al `{tidyverse}`                            | 1.  Tipos de tablas                                      |
-|                                                                    |                                                          |
-| Duración: 2.5 horas                                                | 2.  Tidy data                                            |
-|                                                                    |                                                          |
-|                                                                    | 3.  El `{tidyverse}`                                     |
-|                                                                    |                                                          |
-|                                                                    | 4.  Importación y exportación de datos                   |
-|                                                                    |                                                          |
-|                                                                    | 5.  Operaciones con tablas de datos                      |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 4: Visualización de datos con `{ggplot2}`                   | 1.  Funciones de `{ggplot2}`                             |
-|                                                                    |                                                          |
-| Duración: 2.5 horas                                                | 2.  Geometrías                                           |
-|                                                                    |                                                          |
-|                                                                    | 3.  Estéticas de geometrías                              |
-|                                                                    |                                                          |
-|                                                                    | 4.  Formato de figuras                                   |
-|                                                                    |                                                          |
-|                                                                    | 5.  Análisis Exploratorio                                |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 5: Introducción a la Estadística Inferencial con R          | 1.  Muestras, poblaciones y muestreos                    |
-|                                                                    |                                                          |
-| Duración: 5 horas                                                  | 2.  Parámetros poblaciones y de muestro                  |
-|                                                                    |                                                          |
-|                                                                    | 3.  Estimación de parámetros de población.               |
-|                                                                    |                                                          |
-|                                                                    | 4.  Intervalos de confianza                              |
-|                                                                    |                                                          |
-|                                                                    | 5.  Pruebas de hipótesis                                 |
-|                                                                    |                                                          |
-|                                                                    | 6.  Tipos de errores                                     |
-|                                                                    |                                                          |
-|                                                                    | 7.  Poder de una prueba estadística                      |
-|                                                                    |                                                          |
-|                                                                    | 8.  Tamaño del efecto                                    |
-|                                                                    |                                                          |
-|                                                                    | 9.  Colas de una prueba                                  |
-|                                                                    |                                                          |
-|                                                                    | 10. Pruebas estadísticas paramétricas simples            |
-|                                                                    |                                                          |
-|                                                                    | 11. Pruebas estadísticas no paramétricas                 |
-|                                                                    |                                                          |
-|                                                                    | 12. Introducción al Análisis de Varianza (ANOVA)         |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 6: Principios básicos de Diseño de Experimentos             | 1.  Tipos de estudios                                    |
-|                                                                    |                                                          |
-| Duración: 2.5 horas                                                | 2.  Pilares del diseño de experimentos                   |
-|                                                                    |                                                          |
-|                                                                    | 3.  Repeticiones                                         |
-|                                                                    |                                                          |
-|                                                                    | 4.  Tamaño de muestra                                    |
-|                                                                    |                                                          |
-|                                                                    | 5.  Diseño Completamente al Azar (DCA)                   |
-|                                                                    |                                                          |
-|                                                                    | 6.  Diseño en Bloques Completamente al Azar (DBCA)       |
-|                                                                    |                                                          |
-|                                                                    | 7.  Diseño Factorial Completo (DFC)                      |
-|                                                                    |                                                          |
-|                                                                    | 8.  Diseño Cuadrado Latino (DCL)                         |
-|                                                                    |                                                          |
-|                                                                    | 9.  Otros diseños experimentales                         |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 7: Otros métodos estadísticos comúnmente usados en Biología | 1.  Regresión lineal simple y múltiple                   |
-|                                                                    |                                                          |
-| Duración: 3 horas                                                  | 2.  Introducción a modelos lineales generalizados        |
-|                                                                    |                                                          |
-|                                                                    | 3.  Análisis de componentes principales                  |
-+--------------------------------------------------------------------+----------------------------------------------------------+
-| Módulo 8: Introducción a la creación de reportes con Quarto        | 1.  Introducción a Quarto y Rmarkdown                    |
-|                                                                    |                                                          |
-| Duración: 2 horas                                                  | 2.  Estructura de un documento de Quarto                 |
-|                                                                    |                                                          |
-|                                                                    | 3.  Generación de nuestro primer reporte                 |
-|                                                                    |                                                          |
-|                                                                    | 4.  Tipos de documentos en Quarto                        |
-+--------------------------------------------------------------------+----------------------------------------------------------+
+[See the full curriculum →](curriculum.qmd){.btn .btn-primary}
 
+## Guiding principles
 
+- **Concepts before code, plots before models.** Every modelling session starts with a picture of the data.
+- **Your own data.** From the second session on, students work on their own projects.
+- **Active learning.** Short inputs, then hands-on work, discussion and feedback.
+- **Aligned outcomes, activities and assessment.** Each session states what students will be able to do, and checks it.
+- **Open and reproducible.** All materials, code and data examples are openly available.
 
+[Read more about the teaching approach →](approach.qmd)
 
-## Objetivos de aprendizaje:
+## Explore
 
-Al término del curso, el estudiante deberá ser capaz de:
+::: {.grid}
 
--   Realizar operaciones básicas en R, tales como: cargar, modificar, limpiar y guardar tablas de datos.
+::: {.g-col-12 .g-col-md-4}
+::: {.card-box}
+### Sample session
+The demonstration lecture *Introduction to generalized linear mixed models*, and how it fits into the course.
 
--   Realizar gráficos de manera profesional usando R.
+[Go to the sample session](sample-session.qmd)
+:::
+:::
 
--   Planificar y decidir que tipo de diseño experimental deberá usar para llevar a cabo un estudio, dependiendo de la hipótesis del mismo.
+::: {.g-col-12 .g-col-md-4}
+::: {.card-box}
+### Exercises and self-check
+Interactive R exercises that run in the browser, and a short anonymous quiz with explanations.
 
--   Llevar a cabo análisis exploratorio de datos.
+[Try the exercises](exercises.qmd) · [Take the self-check](self-check.qmd)
+:::
+:::
 
--   Llevar a cabo, interpretar y reportar los resultados de metodologías estadísticas tales como: pruebas t, pruebas no paramétricas y análisis de varianza.
+::: {.g-col-12 .g-col-md-4}
+::: {.card-box}
+### Consulting
+How individual statistical consulting works, and how it feeds back into the teaching.
 
--   Realizar reportes estadísticos básicos en R.
+[About consulting](consulting.qmd)
+:::
+:::
 
-
-## Canales de comunicación:
-
--   Preguntas durante las sesiones
-
--   Consultas dirigidas al instructor al correo electrónico: mmorenozambrano@gmail.com
-
-## Sobre el instructor
-
-Mauricio Moreno, PhD
-
-Ingeniero en Biotecnología (Universidad de las Fuerzas Armadas - ESPE), cuenta con un máster en Estadística con mención en Biometría (KU Leuven, Bélgica) y un doctorado en Bioinformática (Jacobs University Bremen, Alemania), posee más de diez años de experiencia en programación estadística en R. Ha trabajado como consultor independiente, profesor, analista de estadísticas ambientales e investigador postdoctoral. Actualmente, ocupa el puesto de Científico Bioestadístico en la función de Soluciones de Campo en Bayer Crop Science, liderando proyectos de investigación y desarrollo incluyendo la migración de procesos estadísticos a la nube y determinación de tamaños de muestra mediante simulaciones Montecarlo basados en cadenas de Markov.
-
-
+:::

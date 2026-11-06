@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exercises – Statistics Training for CBB</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./icon1.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1711aff45c752a8005a53f7cb73df7b5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Exercises – Statistics Training for CBB">
+<meta property="og:description" content="Introduction to generalized linear mixed models">
+<meta property="og:image" content="icon1.png">
+<meta property="og:site_name" content="Statistics Training for CBB">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./icon1.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Statistics Training for CBB</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./curriculum.html"> 
+<span class="menu-text">Curriculum</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./approach.html"> 
+<span class="menu-text">Teaching approach</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sample-session.html"> 
+<span class="menu-text">Sample session</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./exercises.html" aria-current="page"> 
+<span class="menu-text">Exercises</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./self-check.html"> 
+<span class="menu-text">Self-check</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./consulting.html"> 
+<span class="menu-text">Consulting</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-1-look-at-the-data-first" id="toc-part-1-look-at-the-data-first" class="nav-link active" data-scroll-target="#part-1-look-at-the-data-first">Part 1: Look at the data first</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1.1-how-is-the-data-grouped" id="toc-exercise-1.1-how-is-the-data-grouped" class="nav-link" data-scroll-target="#exercise-1.1-how-is-the-data-grouped">Exercise 1.1: How is the data grouped?</a></li>
+  <li><a href="#exercise-1.2-plot-before-you-model" id="toc-exercise-1.2-plot-before-you-model" class="nav-link" data-scroll-target="#exercise-1.2-plot-before-you-model">Exercise 1.2: Plot before you model</a></li>
+  </ul></li>
+  <li><a href="#part-2-accounting-for-the-grouping" id="toc-part-2-accounting-for-the-grouping" class="nav-link" data-scroll-target="#part-2-accounting-for-the-grouping">Part 2: Accounting for the grouping</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2.1-ignoring-the-mothers" id="toc-exercise-2.1-ignoring-the-mothers" class="nav-link" data-scroll-target="#exercise-2.1-ignoring-the-mothers">Exercise 2.1: Ignoring the mothers</a></li>
+  <li><a href="#exercise-2.2-your-first-linear-mixed-model" id="toc-exercise-2.2-your-first-linear-mixed-model" class="nav-link" data-scroll-target="#exercise-2.2-your-first-linear-mixed-model">Exercise 2.2: Your first linear mixed model</a></li>
+  <li><a href="#exercise-2.3-how-alike-are-siblings" id="toc-exercise-2.3-how-alike-are-siblings" class="nav-link" data-scroll-target="#exercise-2.3-how-alike-are-siblings">Exercise 2.3: How alike are siblings?</a></li>
+  </ul></li>
+  <li><a href="#part-3-when-the-response-is-binary" id="toc-part-3-when-the-response-is-binary" class="nav-link" data-scroll-target="#part-3-when-the-response-is-binary">Part 3: When the response is binary</a>
+  <ul class="collapse">
+  <li><a href="#exercise-3.1-plot-the-learning-curves" id="toc-exercise-3.1-plot-the-learning-curves" class="nav-link" data-scroll-target="#exercise-3.1-plot-the-learning-curves">Exercise 3.1: Plot the learning curves</a></li>
+  <li><a href="#exercise-3.2-fit-a-glmm" id="toc-exercise-3.2-fit-a-glmm" class="nav-link" data-scroll-target="#exercise-3.2-fit-a-glmm">Exercise 3.2: Fit a GLMM</a></li>
+  <li><a href="#exercise-3.3-challenge-typical-individual-or-population-average" id="toc-exercise-3.3-challenge-typical-individual-or-population-average" class="nav-link" data-scroll-target="#exercise-3.3-challenge-typical-individual-or-population-average">Exercise 3.3: Challenge: typical individual or population average?</a></li>
+  </ul></li>
+  <li><a href="#part-4-your-own-data" id="toc-part-4-your-own-data" class="nav-link" data-scroll-target="#part-4-your-own-data">Part 4: Your own data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exercises</h1>
+<p class="subtitle lead">Introduction to generalized linear mixed models</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>These exercises follow the <a href="./sample-session.html">sample session</a> step by step. The code runs <strong>in your browser</strong>: no installation needed. Type your code in the boxes and press <strong>Run Code</strong>. Stuck? Open the <strong>Hint</strong> tab, and compare your answer with the <strong>Solution</strong> tab.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Before you start
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The first time, loading R and the packages <code>ggplot2</code>, <code>dplyr</code> and <code>lme4</code> takes up to a minute. Wait until the boxes are ready.</li>
+<li>Two datasets are already loaded:
+<ul>
+<li><code>lizard</code>: 102 lizards from 29 mothers, with <code>mother</code>, <code>sex</code> (Male or Female) and <code>dors</code> (number of dorsal scales). Data courtesy of Prof.&nbsp;Geert Verbeke (KU Leuven).</li>
+<li><code>learn</code>: a <strong>simulated</strong> learning task, 30 individuals (<code>id</code>) doing 10 trials per session over 8 sessions (<code>session</code>), with <code>correct</code> (1 or 0). It is the same simulated dataset as in the slides.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="cell" data-setup="true" data-exercise="[&quot;ex_1_1&quot;,&quot;ex_1_2&quot;,&quot;ex_2_1&quot;,&quot;ex_2_2&quot;,&quot;ex_2_3&quot;,&quot;ex_3_1&quot;,&quot;ex_3_2&quot;,&quot;ex_3_3&quot;]">
+<script type="exercise-setup-ex_1_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_1_2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_2_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_2_2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_2_3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_3_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_3_2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+<script type="exercise-setup-ex_3_3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzFfMSIsImV4XzFfMiIsImV4XzJfMSIsImV4XzJfMiIsImV4XzJfMyIsImV4XzNfMSIsImV4XzNfMiIsImV4XzNfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShsbWU0KVxuXG5saXphcmQgPC0gcmVhZC50YWJsZShoZWFkZXIgPSBUUlVFLCB0ZXh0ID0gXCJcbm1vdGhlciBzZXggZG9yc1xuMiAwIDM3XG4yIDAgMzlcbjIgMCAzNVxuMiAxIDM1XG4zIDAgMzVcbjQgMCAzN1xuNCAxIDM1XG41IDEgMzVcbjUgMSAzNVxuNSAxIDM3XG42IDAgMzRcbjYgMCAzNVxuNiAwIDM2XG42IDEgMzZcbjYgMSAzNVxuNiAxIDM2XG43IDEgMzhcbjcgMSAzN1xuOCAwIDM2XG44IDEgMzVcbjkgMCAzN1xuOSAxIDMzXG4xMCAwIDM3XG4xMCAwIDM5XG4xMCAxIDM2XG4xMCAxIDM1XG4xMSAxIDM0XG4xMiAwIDM4XG4xMiAwIDQyXG4xMiAxIDM2XG4xMiAxIDM3XG4xMiAxIDM0XG4xMyAwIDM2XG4xNCAwIDM1XG4xNCAwIDM3XG4xNCAxIDM0XG4xNSAwIDMwXG4xNSAwIDMyXG4xNSAxIDMyXG4xNSAxIDMzXG4xNSAxIDMwXG4xNiAwIDM2XG4xNiAwIDMyXG4xNyAwIDM1XG4xNyAwIDM1XG4xNyAxIDM1XG4xNyAxIDM2XG4xOCAwIDM2XG4xOCAxIDMyXG4xOCAxIDM0XG4xOCAxIDM2XG4xOCAxIDM0XG4xOSAwIDMzXG4xOSAwIDMxXG4xOSAwIDMwXG4xOSAwIDM0XG4xOSAxIDMyXG4yMCAwIDM1XG4yMCAwIDM2XG4yMCAxIDM1XG4yMCAxIDM0XG4yMCAxIDMzXG4yMSAwIDM0XG4yMSAwIDM0XG4yMSAwIDM2XG4yMSAxIDM3XG4yMSAxIDM0XG4yMiAwIDM3XG4yMiAwIDM4XG4yMiAwIDM3XG4yMiAwIDM1XG4yMiAxIDM3XG4yMiAxIDM3XG4yMyAwIDM2XG4yMyAxIDMzXG4yMyAxIDMzXG4yMyAxIDM0XG4yMyAxIDM1XG4yNCAwIDM0XG4yNCAwIDMzXG4yNCAxIDMzXG4yNCAxIDMyXG4yNSAwIDM2XG4yNSAwIDM1XG4yNSAxIDM3XG4yNSAxIDM3XG4yNSAxIDM2XG4yNSAxIDQwXG4yNiAwIDM2XG4yNiAxIDM1XG4yNiAxIDMzXG4yNiAxIDMxXG4yNyAxIDM0XG4yOCAwIDM2XG4yOCAxIDM2XG4yOCAxIDMyXG4yOSAwIDM0XG4yOSAwIDM2XG4yOSAwIDM2XG4yOSAxIDM1XG4zMCAwIDM2XG4zMCAxIDM1XG5cIilcbmxpemFyZCRzZXggICAgPC0gZmFjdG9yKGxpemFyZCRzZXgsIGxldmVscyA9IGMoMCwgMSksIGxhYmVscyA9IGMoXCJNYWxlXCIsIFwiRmVtYWxlXCIpKVxubGl6YXJkJG1vdGhlciA8LSBmYWN0b3IobGl6YXJkJG1vdGhlcilcblxuc2V0LnNlZWQoMjAyNilcbm5faWQgICAgIDwtIDMwXG5zZXNzaW9ucyA8LSAxOjhcbm5fdHJpYWxzIDwtIDEwXG5iX3RydWUgICA8LSBybm9ybShuX2lkLCBtZWFuID0gMCwgc2QgPSAxLjUpXG5sZWFybiA8LSBleHBhbmQuZ3JpZChpZCA9IDE6bl9pZCwgc2Vzc2lvbiA9IHNlc3Npb25zLCB0cmlhbCA9IDE6bl90cmlhbHMpXG5sZWFybiRjb3JyZWN0IDwtIHJiaW5vbShucm93KGxlYXJuKSwgc2l6ZSA9IDEsXG4gICAgICAgICAgICAgICAgICAgICAgICBwcm9iID0gcGxvZ2lzKC0xLjUgKyAwLjUgKiAobGVhcm4kc2Vzc2lvbiAtIDEpICsgYl90cnVlW2xlYXJuJGlkXSkpXG5sZWFybiRpZCA8LSBmYWN0b3IobGVhcm4kaWQpIn0=
+</script>
+</div>
+<section id="part-1-look-at-the-data-first" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-look-at-the-data-first">Part 1: Look at the data first</h2>
+<section id="exercise-1.1-how-is-the-data-grouped" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1.1-how-is-the-data-grouped">Exercise 1.1: How is the data grouped?</h3>
+<p><strong>How many lizards and how many mothers are in <code>lizard</code>? Fill in the blanks.</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell" data-exercise="ex_1_1">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMV8xIn0sImNvZGUiOiJucm93KF9fX18pXG5uX2Rpc3RpbmN0KGxpemFyZCRfX19fKSJ9
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_1_1">
+<p><code>nrow()</code> counts the rows of a data frame. <code>n_distinct()</code> from <code>dplyr</code> counts the different values in a column. Which column identifies the mothers?</p>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1_1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(lizard)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(lizard<span class="sc">$</span>mother)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>102 lizards from 29 mothers: on average about 3.5 siblings per mother.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1.2-plot-before-you-model" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1.2-plot-before-you-model">Exercise 1.2: Plot before you model</h3>
+<p><strong>Complete the code to plot the number of dorsal scales for each mother, coloured by sex. What do you notice?</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell" data-exercise="ex_1_2">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMV8yIn0sImNvZGUiOiJnZ3Bsb3QobGl6YXJkLCBhZXMoeCA9IF9fX18sIHkgPSBfX19fLCBjb2xvdXIgPSBfX19fKSkgK1xuICBnZW9tX3BvaW50KHNpemUgPSAyLjUsIGFscGhhID0gMC44KSArXG4gIGxhYnMoeCA9IFwiTW90aGVyXCIsIHkgPSBcIkRvcnNhbCBzY2FsZXNcIikgK1xuICB0aGVtZV9taW5pbWFsKCkifQ==
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_1_2">
+<p>The x-axis shows the grouping (<code>mother</code>), the y-axis the response (<code>dors</code>), and the colour the predictor of interest (<code>sex</code>).</p>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1_2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lizard, <span class="fu">aes</span>(<span class="at">x =</span> mother, <span class="at">y =</span> dors, <span class="at">colour =</span> sex)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mother"</span>, <span class="at">y =</span> <span class="st">"Dorsal scales"</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mothers differ a lot in their typical number of scales, and within a mother, males tend to have more scales than females. Siblings are more alike than unrelated lizards.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-2-accounting-for-the-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-accounting-for-the-grouping">Part 2: Accounting for the grouping</h2>
+<section id="exercise-2.1-ignoring-the-mothers" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2.1-ignoring-the-mothers">Exercise 2.1: Ignoring the mothers</h3>
+<p><strong>Compare males and females with a two-sample t-test that assumes equal variances. Is there evidence of a difference?</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell" data-exercise="ex_2_1">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl8xIn0sImNvZGUiOiIifQ==
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_2_1">
+<p>Use <code>t.test()</code> with a formula <code>response ~ group</code>, the <code>data</code> argument and <code>var.equal = TRUE</code>.</p>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2_1">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(dors <span class="sc">~</span> sex, <span class="at">data =</span> lizard, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math inline">\(p \approx 0.10\)</span>: no clear evidence of a difference. But the test treats all 102 lizards as independent (<code>df = 100</code>), which they are not.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2.2-your-first-linear-mixed-model" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2.2-your-first-linear-mixed-model">Exercise 2.2: Your first linear mixed model</h3>
+<p><strong>Fit a linear mixed model for <code>dors</code> with <code>sex</code> as a fixed effect and a random intercept for <code>mother</code>. Then compare the sex effect with the one from <code>lm(dors ~ sex)</code>.</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell" data-exercise="ex_2_2">
+<div>
+<div id="webr-5" class="exercise-cell">
+
+</div>
+<script type="webr-5-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl8yIn0sImNvZGUiOiJmaXRfbG0gIDwtIGxtKGRvcnMgfiBzZXgsIGRhdGEgPSBsaXphcmQpXG5maXRfbG1tIDwtIGxtZXIoX19fXywgZGF0YSA9IGxpemFyZClcblxuc3VtbWFyeShmaXRfbG0pJGNvZWZmaWNpZW50c1xuc3VtbWFyeShmaXRfbG1tKSRjb2VmZmljaWVudHMifQ==
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_2_2">
+<p>A random intercept for <code>mother</code> is written <code>(1 | mother)</code> and added to the formula like any other term: <code>dors ~ sex + (1 | mother)</code>.</p>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2_2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fit_lm  <span class="ot">&lt;-</span> <span class="fu">lm</span>(dors <span class="sc">~</span> sex, <span class="at">data =</span> lizard)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fit_lmm <span class="ot">&lt;-</span> <span class="fu">lmer</span>(dors <span class="sc">~</span> sex <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> mother), <span class="at">data =</span> lizard)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_lm)<span class="sc">$</span>coefficients</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_lmm)<span class="sc">$</span>coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The mixed model compares lizards <strong>within</strong> mothers: the sex effect becomes larger (about <span class="math inline">\(-0.83\)</span> scales for females) and its standard error smaller, so the <code>t value</code> is now about <span class="math inline">\(-2.6\)</span>.</p>
+<p>Note that <code>lme4</code> does not print p-values. The <code>lmerTest</code> package adds them, as in the slides.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2.3-how-alike-are-siblings" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2.3-how-alike-are-siblings">Exercise 2.3: How alike are siblings?</h3>
+<p><strong>Extract the variance components from <code>fit_lmm</code> and compute the intraclass correlation (ICC).</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="cell" data-exercise="ex_2_3">
+<div>
+<div id="webr-6" class="exercise-cell">
+
+</div>
+<script type="webr-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMl8zIn0sImNvZGUiOiJmaXRfbG1tIDwtIGxtZXIoZG9ycyB+IHNleCArICgxIHwgbW90aGVyKSwgZGF0YSA9IGxpemFyZClcblxudmMgPC0gYXMuZGF0YS5mcmFtZShWYXJDb3JyKGZpdF9sbW0pKVxudmNcblxuczJfbW90aGVyICAgPC0gdmMkdmNvdlt2YyRncnAgPT0gXCJtb3RoZXJcIl1cbnMyX3Jlc2lkdWFsIDwtIHZjJHZjb3ZbdmMkZ3JwID09IFwiUmVzaWR1YWxcIl1cblxuaWNjIDwtIF9fX19cbmljYyJ9
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_2_3">
+<p>The ICC is the share of the total variance that lies between mothers: <span class="math display">\[\rho = \frac{\sigma^2_{mother}}{\sigma^2_{mother} + \sigma^2}\]</span></p>
+</div>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2_3">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit_lmm <span class="ot">&lt;-</span> <span class="fu">lmer</span>(dors <span class="sc">~</span> sex <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> mother), <span class="at">data =</span> lizard)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>vc <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">VarCorr</span>(fit_lmm))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>s2_mother   <span class="ot">&lt;-</span> vc<span class="sc">$</span>vcov[vc<span class="sc">$</span>grp <span class="sc">==</span> <span class="st">"mother"</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>s2_residual <span class="ot">&lt;-</span> vc<span class="sc">$</span>vcov[vc<span class="sc">$</span>grp <span class="sc">==</span> <span class="st">"Residual"</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>icc <span class="ot">&lt;-</span> s2_mother <span class="sc">/</span> (s2_mother <span class="sc">+</span> s2_residual)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>icc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math inline">\(\rho \approx 1.78 / (1.78 + 2.25) = 0.44\)</span>: about 44% of the variability in dorsal scales is due to the mother.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-3-when-the-response-is-binary" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-when-the-response-is-binary">Part 3: When the response is binary</h2>
+<section id="exercise-3.1-plot-the-learning-curves" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.1-plot-the-learning-curves">Exercise 3.1: Plot the learning curves</h3>
+<p><strong>Compute the proportion of correct answers for each individual and session, then plot one line per individual.</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="cell" data-exercise="ex_3_1">
+<div>
+<div id="webr-7" class="exercise-cell">
+
+</div>
+<script type="webr-7-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfM18xIn0sImNvZGUiOiJsZWFybl9zdW0gPC0gbGVhcm4gfD5cbiAgZ3JvdXBfYnkoX19fXywgX19fXykgfD5cbiAgc3VtbWFyaXNlKHAgPSBtZWFuKGNvcnJlY3QpLCAuZ3JvdXBzID0gXCJkcm9wXCIpXG5cbmdncGxvdChsZWFybl9zdW0sIGFlcyh4ID0gc2Vzc2lvbiwgeSA9IHAsIGdyb3VwID0gX19fXykpICtcbiAgZ2VvbV9saW5lKGFscGhhID0gMC41KSArXG4gIGxhYnMoeCA9IFwiU2Vzc2lvblwiLCB5ID0gXCJQcm9wb3J0aW9uIGNvcnJlY3RcIikgK1xuICB0aGVtZV9taW5pbWFsKCkifQ==
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_3_1">
+<p>We want one proportion per individual (<code>id</code>) and session (<code>session</code>), and one line per individual.</p>
+</div>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3_1">
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>learn_sum <span class="ot">&lt;-</span> learn <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id, session) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">p =</span> <span class="fu">mean</span>(correct), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(learn_sum, <span class="fu">aes</span>(<span class="at">x =</span> session, <span class="at">y =</span> p, <span class="at">group =</span> id)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Session"</span>, <span class="at">y =</span> <span class="st">"Proportion correct"</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>All individuals tend to improve, but they start at very different levels: another sign of grouped data.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3.2-fit-a-glmm" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.2-fit-a-glmm">Exercise 3.2: Fit a GLMM</h3>
+<p><strong>Fit a logistic GLMM for <code>correct</code> with <code>session</code> as a fixed effect and a random intercept for <code>id</code>. Then compute the odds ratio per session.</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="cell" data-exercise="ex_3_2">
+<div>
+<div id="webr-8" class="exercise-cell">
+
+</div>
+<script type="webr-8-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfM18yIn0sImNvZGUiOiJmaXRfZ2xtbSA8LSBnbG1lcihfX19fLCBmYW1pbHkgPSBfX19fLCBkYXRhID0gbGVhcm4pXG5cbnN1bW1hcnkoZml0X2dsbW0pXG5cbmV4cChmaXhlZihmaXRfZ2xtbSkpIn0=
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_3_2">
+<p>The formula is built just like in <code>lmer()</code>: <code>correct ~ session + (1 | id)</code>. For a binary response, use <code>family = binomial</code>.</p>
+</div>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3_2">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit_glmm <span class="ot">&lt;-</span> <span class="fu">glmer</span>(correct <span class="sc">~</span> session <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> id), <span class="at">family =</span> binomial, <span class="at">data =</span> learn)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_glmm)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">fixef</span>(fit_glmm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The estimate for <code>session</code> is on the log-odds scale. <code>exp()</code> turns it into an odds ratio: for a <strong>typical individual</strong>, the odds of a correct answer are multiplied by this factor in each session. The <code>Std.Dev.</code> of <code>id</code> under <em>Random effects</em> shows how much individuals differ.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3.3-challenge-typical-individual-or-population-average" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.3-challenge-typical-individual-or-population-average">Exercise 3.3: Challenge: typical individual or population average?</h3>
+<p><strong>Using <code>fit_glmm</code>, compute the probability of a correct answer in session 8 (a) for a typical individual (<span class="math inline">\(b_i = 0\)</span>) and (b) averaged over the population of individuals. Why do they differ?</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div class="cell" data-exercise="ex_3_3">
+<div>
+<div id="webr-9" class="exercise-cell">
+
+</div>
+<script type="webr-9-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfM18zIn0sImNvZGUiOiJmaXRfZ2xtbSA8LSBnbG1lcihjb3JyZWN0IH4gc2Vzc2lvbiArICgxIHwgaWQpLCBmYW1pbHkgPSBiaW5vbWlhbCwgZGF0YSA9IGxlYXJuKVxuYmV0YSA8LSBmaXhlZihmaXRfZ2xtbSlcbnNkX2IgPC0gYXMuZGF0YS5mcmFtZShWYXJDb3JyKGZpdF9nbG1tKSkkc2Rjb3JbMV1cblxuIyAoYSkgdHlwaWNhbCBpbmRpdmlkdWFsXG5wX3R5cGljYWwgPC0gcGxvZ2lzKGJldGFbMV0gKyBiZXRhWzJdICogOClcblxuIyAoYikgcG9wdWxhdGlvbiBhdmVyYWdlOiBzaW11bGF0ZSBtYW55IGluZGl2aWR1YWxzIGFuZCBhdmVyYWdlIHRoZWlyIHByb2JhYmlsaXRpZXNcbmJfZHJhdyA8LSBybm9ybSgxMDAwMCwgbWVhbiA9IDAsIHNkID0gc2RfYilcbnBfYXZlcmFnZSA8LSBfX19fXG5cbmModHlwaWNhbCA9IHBfdHlwaWNhbCwgYXZlcmFnZSA9IHBfYXZlcmFnZSkifQ==
+</script>
+</div>
+</div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_3_3">
+<p>Add each simulated random intercept <code>b_draw</code> to the linear predictor, transform with <code>plogis()</code>, and take the <code>mean()</code> of the resulting probabilities.</p>
+</div>
+</div>
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3_3">
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit_glmm <span class="ot">&lt;-</span> <span class="fu">glmer</span>(correct <span class="sc">~</span> session <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> id), <span class="at">family =</span> binomial, <span class="at">data =</span> learn)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">fixef</span>(fit_glmm)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sd_b <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">VarCorr</span>(fit_glmm))<span class="sc">$</span>sdcor[<span class="dv">1</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>p_typical <span class="ot">&lt;-</span> <span class="fu">plogis</span>(beta[<span class="dv">1</span>] <span class="sc">+</span> beta[<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">8</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>b_draw <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> sd_b)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>p_average <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">plogis</span>(beta[<span class="dv">1</span>] <span class="sc">+</span> beta[<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">8</span> <span class="sc">+</span> b_draw))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">typical =</span> p_typical, <span class="at">average =</span> p_average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The population average is closer to 50% than the typical individual. Averaging S-shaped curves that are shifted left and right gives a flatter curve: in a GLMM, the fixed effects describe the <strong>typical individual</strong>, not the population average.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-4-your-own-data" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-your-own-data">Part 4: Your own data</h2>
+<p>No code here: take five minutes with pen and paper, then discuss with a neighbour.</p>
+<ol type="1">
+<li><strong>What is one observation</strong> (one row) in your dataset?</li>
+<li><strong>How are your observations grouped?</strong> Sketch the levels, e.g., trials within individuals within groups.</li>
+<li><strong>What type is your response?</strong> Continuous, binary, a count or a proportion?</li>
+<li><strong>Which model</strong> would you start with, and which random effects would it need?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Finished? Try the <a href="./self-check.html">self-check</a> for this session.</p>
+</div>
+</div>
+
+
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC40LjIvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImdncGxvdDIiLCJkcGx5ciIsImxtZTQiXSwicmVwb3MiOltdfSwicmVuZGVyX2RmIjoiZGVmYXVsdCJ9
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC05IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV85O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItOS1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzkgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzksIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzkuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTgiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzg7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici04IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfOCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTgtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici04LWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfOCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfOCwge30pO1xuX3dlYnJfZmVlZGJhY2tfOCA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfOC5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtNyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNztcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTciLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl83ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNy1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXhlcmNpc2UgY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbihcbiAgICB7XG4gICAgICBpZDogXCJ3ZWJyLTctY29udGVudHNcIixcbiAgICAgIGVudmlyOiBgZXhlcmNpc2UtZW52LSR7YmxvY2suYXR0ci5leGVyY2lzZX1gLFxuICAgICAgZXJyb3I6IGZhbHNlLFxuICAgICAgY2FwdGlvbjogJ0V4ZXJjaXNlJyxcbiAgICB9LFxuICAgIGJsb2NrLmF0dHJcbiAgKTtcblxuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbnZpZXdvZiBfd2Vicl92YWx1ZV83ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl83LCB7fSk7XG5fd2Vicl9mZWVkYmFja183ID0ge1xuICBjb25zdCB7IFdlYlJHcmFkZXIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGVtcHR5RmVlZGJhY2sgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcblxuICBjb25zdCBncmFkZXIgPSBuZXcgV2ViUkdyYWRlcihfd2Vicl92YWx1ZV83LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItNiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItNi1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzYgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzYsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzYuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzU7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici01IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNSA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTUtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici01LWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNSwge30pO1xuX3dlYnJfZmVlZGJhY2tfNSA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfNS5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNDtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXhlcmNpc2UgY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbihcbiAgICB7XG4gICAgICBpZDogXCJ3ZWJyLTQtY29udGVudHNcIixcbiAgICAgIGVudmlyOiBgZXhlcmNpc2UtZW52LSR7YmxvY2suYXR0ci5leGVyY2lzZX1gLFxuICAgICAgZXJyb3I6IGZhbHNlLFxuICAgICAgY2FwdGlvbjogJ0V4ZXJjaXNlJyxcbiAgICB9LFxuICAgIGJsb2NrLmF0dHJcbiAgKTtcblxuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbnZpZXdvZiBfd2Vicl92YWx1ZV80ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl80LCB7fSk7XG5fd2Vicl9mZWVkYmFja180ID0ge1xuICBjb25zdCB7IFdlYlJHcmFkZXIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGVtcHR5RmVlZGJhY2sgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcblxuICBjb25zdCBncmFkZXIgPSBuZXcgV2ViUkdyYWRlcihfd2Vicl92YWx1ZV80LmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItMy1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzMuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMiA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0yLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuX3dlYnJfZmVlZGJhY2tfMiA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfMi5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIFVzZSBQb3N0TWVzc2FnZSBjaGFubmVsIGZvciBhc3luYyBjb21tdW5pY2F0aW9uXG4gIC8vIFdlIGRvIG5vdCBleHBlY3QgdG8gdGFrZSBuZXN0ZWQgcHJvbXB0IGlucHV0IGluIFF1YXJ0byBMaXZlIGNlbGxzXG4gIGRhdGEub3B0aW9ucy5jaGFubmVsVHlwZSA9IENoYW5uZWxUeXBlLlBvc3RNZXNzYWdlO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKCFlLm1lc3NhZ2UuaW5jbHVkZXMoXCJGUyBlcnJvclwiKSkge1xuICAgICAgICAgICAgdGhyb3cgZTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Teaching concept proposal by Mauricio Moreno, PhD. Not an official page of the University of Göttingen or the German Primate Center.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

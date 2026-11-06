@@ -1,0 +1,20 @@
+---
+title: "About"
+toc: false
+---
+
+## Mauricio Moreno, PhD
+
+I am a biostatistician with more than ten years of experience in academia and industry, and I have been programming statistics in R for just as long.
+
+- **Current role:** Biostatistics Scientist in the Field Solutions function at Bayer Crop Science. I design and plan trials, determine sample sizes through simulation, and maintain an automated analysis pipeline. I was the main statistician on a three-year cross-functional project with market development, biologicals and field solutions.
+- **Earlier:** postdoctoral researcher at a research institute in Germany, independent statistical consultant, lecturer, and environmental statistics analyst.
+- **Education:** Biotechnology Engineering (Universidad de las Fuerzas Armadas ESPE, Ecuador), Master of Statistics with a specialisation in biometrics, including clinical trials (KU Leuven, Belgium), and PhD in Bioinformatics (Jacobs University Bremen, Germany).
+
+## Teaching
+
+In my free time I teach free online statistics courses. The most recent, *Bioestadística en R* (2025), was a 40-hour workshop for students and researchers in biology and agriculture. It covered R programming, data wrangling with the `tidyverse`, visualisation with `ggplot2`, statistical inference, design of experiments, linear and generalized linear models, and reproducible reports with Quarto. Like this site, its materials were built with Quarto and included interactive in-browser exercises.
+
+## Languages
+
+Spanish and English.

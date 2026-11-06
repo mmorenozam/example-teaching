@@ -1,0 +1,144 @@
+---
+title: "Self-check"
+subtitle: "Introduction to generalized linear mixed models"
+filters:
+  - selfcheck.lua
+include-after-body: selfcheck.html
+toc: false
+---
+
+Nine short questions on the [sample session](sample-session.qmd), two or three per learning goal. You get two tries per question, then the answer and an explanation. **Anonymous: nothing is stored or sent anywhere.**
+
+::: {.callout-note appearance="simple"}
+<span id="sc-score"></span>
+:::
+
+## Goal 1: Recognising grouped data
+
+::: {.selfcheck}
+**1. A researcher records 40 trials from each of 12 macaques and compares two conditions with a t-test on all 480 trials. What is the main problem?**
+
+- [ ] The sample size is too small for a t-test
+- [x] Trials from the same macaque are not independent, so the standard errors are too small
+- [ ] A t-test cannot handle 480 observations
+- [ ] Each macaque should be analysed separately
+
+::: {.explanation}
+The 480 trials are not 480 independent pieces of information: trials from the same animal are more alike than trials from different animals. Treating them as independent overstates the evidence (pseudoreplication). A mixed model with a random effect for macaque accounts for this.
+:::
+:::
+
+::: {.selfcheck}
+**2. Which of these datasets is *not* hierarchical?**
+
+- [ ] Eye-tracking trials recorded from several infants
+- [ ] Vocalisations from individuals living in several social groups
+- [x] One measurement per lizard, with every lizard from a different mother
+- [ ] Neurons recorded in several sessions from the same monkeys
+
+::: {.explanation}
+If every lizard has a different mother, there are no clusters: each observation comes from its own "group". All the other examples have repeated observations within a higher-level unit (infant, social group, session, monkey).
+:::
+:::
+
+## Goal 2: Random intercepts and the ICC
+
+::: {.selfcheck}
+**3. In `lmer(dors ~ sex + (1 | mother), data = lizard)`, what does `(1 | mother)` do?**
+
+- [ ] Adds a separate fixed effect for each mother
+- [x] Gives each mother her own baseline, drawn from a normal distribution
+- [ ] Removes the variation between mothers from the data
+- [ ] Lets the effect of sex differ between mothers
+
+::: {.explanation}
+`(1 | mother)` is a **random intercept**: each mother gets her own baseline $\alpha_i \sim N(0, \sigma^2_{mother})$. The model estimates how much mothers vary ($\sigma^2_{mother}$) instead of a separate parameter for each one. Letting the effect of sex differ between mothers would be a random slope, `(sex | mother)`.
+:::
+:::
+
+::: {.selfcheck}
+**4. The variance between mothers is 1.78 and the residual variance is 2.25. What is the intraclass correlation (ICC)?**
+
+- [ ] 0.79
+- [x] 0.44
+- [ ] 0.56
+- [ ] 1.26
+
+::: {.explanation}
+$\rho = \dfrac{\sigma^2_{mother}}{\sigma^2_{mother} + \sigma^2} = \dfrac{1.78}{1.78 + 2.25} = 0.44$. About 44% of the variability in dorsal scales is due to differences between mothers.
+:::
+:::
+
+::: {.selfcheck}
+**5. What does an ICC close to 0 tell you?**
+
+- [x] Observations from the same cluster are hardly more alike than observations from different clusters
+- [ ] The model has failed to converge
+- [ ] There is no effect of the predictors
+- [ ] All observations within a cluster are identical
+
+::: {.explanation}
+An ICC near 0 means the clusters explain almost none of the variability, so the grouping matters little. An ICC near 1 would mean observations within a cluster are nearly identical. The ICC says nothing about the fixed effects.
+:::
+:::
+
+## Goal 3: Choosing between an LMM and a GLMM
+
+::: {.selfcheck}
+**6. On each of 20 trials, you record whether an infant looked at the target (1) or not (0). Which model fits best?**
+
+- [ ] `lmer(looked ~ condition + (1 | infant))`
+- [x] `glmer(looked ~ condition + (1 | infant), family = binomial)`
+- [ ] `glm(looked ~ condition, family = binomial)`
+- [ ] `lm(looked ~ condition)`
+
+::: {.explanation}
+The response is binary, so we need a binomial family with a logit link (a GLM), and the trials are grouped within infants, so we need a random effect (a mixed model). Together: a GLMM. The `glm()` ignores the grouping; `lmer()` and `lm()` assume a continuous, normally distributed response.
+:::
+:::
+
+::: {.selfcheck}
+**7. You count the number of aggressive interactions of each individual per week, over 10 weeks. Which model is the natural starting point?**
+
+- [ ] A Gaussian linear mixed model with a random intercept for individual
+- [x] A Poisson (or negative binomial) GLMM with a random intercept for individual
+- [ ] A binomial GLMM with a random intercept for week
+- [ ] A separate t-test for each week
+
+::: {.explanation}
+Counts call for a Poisson family with a log link, or a negative binomial if the counts are overdispersed. Repeated weeks from the same individual call for a random intercept for individual.
+:::
+:::
+
+## Goal 4: Interpreting a GLMM
+
+::: {.selfcheck}
+**8. In a logistic GLMM, the estimate for `session` is 0.50. What does this mean?**
+
+- [x] For a typical individual, the odds of a correct answer are multiplied by about 1.65 per session
+- [ ] The probability of a correct answer increases by 0.50 per session
+- [ ] The population-average probability of a correct answer increases by 50% per session
+- [ ] Half of the individuals improve from one session to the next
+
+::: {.explanation}
+Coefficients in a logistic model are on the **log-odds** scale: $e^{0.50} \approx 1.65$ is the odds ratio per session. In a GLMM, this is the effect for an individual with random effect $b_i = 0$, the *typical* individual, not the population average.
+:::
+:::
+
+::: {.selfcheck}
+**9. Why is the population-average curve flatter than the curve of the typical individual in a logistic GLMM?**
+
+- [x] Averaging S-shaped curves that are shifted left and right gives a flatter curve
+- [ ] Because the model is misspecified
+- [ ] Because the sample size is small
+- [ ] Because random effects shrink the fixed effects towards zero
+
+::: {.explanation}
+Each individual has its own S-shaped curve, shifted by its random intercept. Averaging these curves at each value of the predictor gives a curve that rises more gently than any single one. In a linear mixed model the two coincide; with a non-linear link such as the logit, they do not.
+:::
+:::
+
+::: {.callout-tip}
+## Want to go further?
+The next sessions of [Module B3 and B4](curriculum.qmd#track-b) cover the hands-on work in R, random slopes and crossed random effects.
+:::

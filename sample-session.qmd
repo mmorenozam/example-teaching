@@ -1,0 +1,52 @@
+---
+title: "Sample session"
+subtitle: "Introduction to generalized linear mixed models (Module B3, session 1)"
+---
+
+[Open the slides](https://mmorenozam.github.io/demonstration-class-cbb/){.btn .btn-primary target="_blank"} [Do the exercises](exercises.qmd){.btn .btn-outline-primary} [Take the self-check](self-check.qmd){.btn .btn-outline-primary}
+
+## Context
+
+- **Audience:** early-career PhD researchers who have used linear models but have not met mixed models before.
+- **Place in the curriculum:** first session of [Module B3, Mixed models](curriculum.qmd#track-b). It builds on B1 (linear models) and B2 (GLMs).
+- **Length:** a 15-minute version for the demonstration; in the course, the same input is followed by about an hour of hands-on work.
+
+## Learning goals
+
+By the end of the session, students will be able to:
+
+1. **Recognise** when their data are grouped (repeated trials, siblings, individuals in social groups) and why that breaks the independence assumption.
+2. **Explain** what a random intercept is and what the intraclass correlation tells them.
+3. **Choose** between a linear mixed model and a GLMM based on the type of their response.
+4. **Interpret** the coefficients of a GLMM as effects for the *typical individual*.
+
+## Structure
+
+| Part | What happens | Goal |
+|:--|:--|:--:|
+| One model, many names | t-test, regression, ANOVA, ANCOVA and GLMs as one family, all assuming independent observations | |
+| A simple question | Do male and female lizards differ in their number of dorsal scales? A t-test says no ($p \approx 0.10$). | |
+| Who are their mothers? | **Think-pair-share:** "What do you notice?" The 102 lizards come from 29 mothers, and siblings are alike. | 1 |
+| Hierarchical data | Naming the structure: levels, clusters, and examples from CBB research | 1 |
+| Mother as a fixed effect? | It works, but spends 28 parameters on mothers we do not care about | 2 |
+| The linear mixed model | Random intercepts in `lmer()`; the sex effect becomes clear | 2 |
+| How alike are siblings? | Variance components and the ICC ($\rho \approx 0.44$) | 2 |
+| What if $y$ is not continuous? | Binary and count outcomes; the link function | 3 |
+| The GLMM | A simulated learning task with `glmer()`; odds ratios | 3, 4 |
+| One thing to remember | The average curve is not the curve of the average individual | 4 |
+| Before you fit a mixed model, ask... | Three questions to ask about your own data | 1, 3, 4 |
+
+## In the full course session
+
+After the input, students:
+
+1. **Sketch the hierarchy** of their own dataset (5 minutes, then compare with a neighbour).
+2. **Work through the [exercises](exercises.qmd)**: fit a first random-intercept model to the lizard data in the browser, then adapt the code to their own data.
+3. **Compute and interpret the ICC**, and discuss: does the grouping matter for their question?
+4. Take the **[self-check](self-check.qmd)** to see which ideas need another look.
+
+## Data and materials
+
+- Lizard data: courtesy of Prof. Geert Verbeke (KU Leuven), from the course *Concepts of Multilevel, Longitudinal and Mixed Models*.
+- The learning-task data are simulated.
+- Slides, code and data: [github.com/mmorenozam/demonstration-class-cbb](https://github.com/mmorenozam/demonstration-class-cbb){target="_blank"}

@@ -1,72 +1,57 @@
-project: 
+project:
   type: website
-  render: 
-    - "*.qmd"
   output-dir: docs
+  render:
+    - index.qmd
+    - curriculum.qmd
+    - approach.qmd
+    - sample-session.qmd
+    - exercises.qmd
+    - self-check.qmd
+    - consulting.qmd
+    - resources.qmd
+    - about.qmd
 
-from: markdown+emoji
-
-website: 
-  title: "Bioestadística en R"
+website:
+  title: "Statistics Training for CBB"
+  description: "A teaching concept for statistics and data science training of PhD researchers in the Campus Research Alliance Cognition, Brain and Behavior"
   image: icon1.png
   favicon: icon1.png
   open-graph: true
-  repo-url: https://github.com/mmorenozam/biohack_progR
+  repo-url: https://github.com/mmorenozam/example-teaching
   navbar:
     logo: icon1.png
-    title: false
-    left: 
+    title: "Statistics Training for CBB"
+    left:
       - href: index.qmd
-        text: Inicio
-      - href: recursos.qmd
-      - text: Módulos
-        menu:
-          - text: "Módulo 1"
-            href: https://mmorenozam.github.io/biohack-modulo1/
-            target: "_blank"
-          - text: "Módulo 2"
-            href: https://mmorenozam.github.io/biohack-modulo2/
-            target: "_blank"
-          - text: "Módulo 3"
-            href: https://mmorenozam.github.io/biohack-modulo3/
-            target: "_blank"
-          - text: "Módulo 4"
-            href: https://mmorenozam.github.io/biohack-modulo4/
-            target: "_blank"
-          - text: "Módulo 5"
-            href: https://mmorenozam.github.io/biohack-modulo5/
-            target: "_blank"
-          - text: "Módulo 6"
-            href: https://mmorenozam.github.io/biohack-modulo6/
-            target: "_blank"
-          - text: "Módulo 7"
-            href: https://mmorenozam.github.io/biohack-modulo7/
-            target: "_blank"
-          - text: "Módulo 8"
-            href: https://mmorenozam.github.io/biohack-modulo8/
-            target: "_blank"
-      - text: Ejercicios
-        menu:
-          - text: "Demo"
-            href: ejercicios_demo.qmd
-          - text: "Ejercicios Módulo 1"
-            href: ejercicios_m1.qmd
-          - text: "Ejercicios Módulo 3"
-            href: ejercicios_m3.qmd
-          - text: "Ejercicios Módulo 4"
-            href: ejercicios_m4.qmd
-          - text: "Ejercicios Módulo 5"
-            href: ejercicios_m5.qmd
-          - text: "Ejercicios Módulo 7"
-            href: ejercicios_m7.qmd
-      - href: final.qmd
+        text: Home
+      - href: curriculum.qmd
+        text: Curriculum
+      - href: approach.qmd
+        text: Teaching approach
+      - href: sample-session.qmd
+        text: Sample session
+      - href: exercises.qmd
+        text: Exercises
+      - href: self-check.qmd
+        text: Self-check
+      - href: consulting.qmd
+        text: Consulting
+    right:
+      - href: resources.qmd
+        text: Resources
+      - href: about.qmd
+        text: About
+  page-footer:
+    center: "Teaching concept proposal by Mauricio Moreno, PhD. Not an official page of the University of Göttingen or the German Primate Center."
 
 format:
   html:
+    lang: en
     theme:
       light: [cosmo, theme.scss]
     toc: true
-    toc-location: left
-    toc-title: Contenido
+    toc-location: right
+    toc-title: On this page
     code-copy: true
     code-overflow: wrap

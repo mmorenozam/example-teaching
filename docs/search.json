@@ -1,254 +1,359 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a biostatistician with more than ten years of experience in academia and industry, and I have been programming statistics in R for just as long.\n\nCurrent role: Biostatistics Scientist in the Field Solutions function at Bayer Crop Science. I design and plan trials, determine sample sizes through simulation, and maintain an automated analysis pipeline. I was the main statistician on a three-year cross-functional project with market development, biologicals and field solutions.\nEarlier: postdoctoral researcher at a research institute in Germany, independent statistical consultant, lecturer, and environmental statistics analyst.\nEducation: Biotechnology Engineering (Universidad de las Fuerzas Armadas ESPE, Ecuador), Master of Statistics with a specialisation in biometrics, including clinical trials (KU Leuven, Belgium), and PhD in Bioinformatics (Jacobs University Bremen, Germany)."
+  },
+  {
+    "objectID": "about.html#mauricio-moreno-phd",
+    "href": "about.html#mauricio-moreno-phd",
+    "title": "About",
+    "section": "",
+    "text": "I am a biostatistician with more than ten years of experience in academia and industry, and I have been programming statistics in R for just as long.\n\nCurrent role: Biostatistics Scientist in the Field Solutions function at Bayer Crop Science. I design and plan trials, determine sample sizes through simulation, and maintain an automated analysis pipeline. I was the main statistician on a three-year cross-functional project with market development, biologicals and field solutions.\nEarlier: postdoctoral researcher at a research institute in Germany, independent statistical consultant, lecturer, and environmental statistics analyst.\nEducation: Biotechnology Engineering (Universidad de las Fuerzas Armadas ESPE, Ecuador), Master of Statistics with a specialisation in biometrics, including clinical trials (KU Leuven, Belgium), and PhD in Bioinformatics (Jacobs University Bremen, Germany)."
+  },
+  {
+    "objectID": "about.html#teaching",
+    "href": "about.html#teaching",
+    "title": "About",
+    "section": "Teaching",
+    "text": "Teaching\nIn my free time I teach free online statistics courses. The most recent, Bioestadística en R (2025), was a 40-hour workshop for students and researchers in biology and agriculture. It covered R programming, data wrangling with the tidyverse, visualisation with ggplot2, statistical inference, design of experiments, linear and generalized linear models, and reproducible reports with Quarto. Like this site, its materials were built with Quarto and included interactive in-browser exercises."
+  },
+  {
+    "objectID": "about.html#languages",
+    "href": "about.html#languages",
+    "title": "About",
+    "section": "Languages",
+    "text": "Languages\nSpanish and English."
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "R for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel and Garrett Grolemund: data import, wrangling and visualisation with the tidyverse.\nLearning Statistics with R by Danielle Navarro: a gentle introduction to statistics and R, written with psychology students in mind.\nModern Statistics with R by Måns Thulin: from data handling to more advanced models."
+  },
+  {
+    "objectID": "resources.html#getting-started-with-r",
+    "href": "resources.html#getting-started-with-r",
+    "title": "Resources",
+    "section": "",
+    "text": "R for Data Science by Hadley Wickham, Mine Çetinkaya-Rundel and Garrett Grolemund: data import, wrangling and visualisation with the tidyverse.\nLearning Statistics with R by Danielle Navarro: a gentle introduction to statistics and R, written with psychology students in mind.\nModern Statistics with R by Måns Thulin: from data handling to more advanced models."
+  },
+  {
+    "objectID": "resources.html#visualisation",
+    "href": "resources.html#visualisation",
+    "title": "Resources",
+    "section": "Visualisation",
+    "text": "Visualisation\n\nData Visualization: A Practical Introduction by Kieran Healy: making clear, honest figures with ggplot2."
+  },
+  {
+    "objectID": "resources.html#mixed-models",
+    "href": "resources.html#mixed-models",
+    "title": "Resources",
+    "section": "Mixed models",
+    "text": "Mixed models\n\nGLMM FAQ by Ben Bolker and colleagues: practical answers to common questions about fitting GLMMs in R.\nStatistics for Linguists: An Introduction Using R by Bodo Winter (Routledge, 2019): linear and mixed models explained very clearly, with examples from language research.\nLinear Mixed Models for Longitudinal Data by Geert Verbeke and Geert Molenberghs (Springer, 2000): the theory behind the sample session."
+  },
+  {
+    "objectID": "resources.html#bayesian-modelling",
+    "href": "resources.html#bayesian-modelling",
+    "title": "Resources",
+    "section": "Bayesian modelling",
+    "text": "Bayesian modelling\n\nStatistical Rethinking by Richard McElreath: a modern, causal introduction to Bayesian statistics, with free lecture videos."
+  },
+  {
+    "objectID": "resources.html#reproducible-workflows",
+    "href": "resources.html#reproducible-workflows",
+    "title": "Resources",
+    "section": "Reproducible workflows",
+    "text": "Reproducible workflows\n\nHappy Git and GitHub for the useR by Jenny Bryan: version control for R users.\nQuarto: documentation for reproducible reports, slides, websites and manuscripts."
+  },
+  {
+    "objectID": "self-check.html",
+    "href": "self-check.html",
+    "title": "Self-check",
+    "section": "",
+    "text": "Nine short questions on the sample session, two or three per learning goal. You get two tries per question, then the answer and an explanation. Anonymous: nothing is stored or sent anywhere."
+  },
+  {
+    "objectID": "self-check.html#goal-1-recognising-grouped-data",
+    "href": "self-check.html#goal-1-recognising-grouped-data",
+    "title": "Self-check",
+    "section": "Goal 1: Recognising grouped data",
+    "text": "Goal 1: Recognising grouped data\n\n1. A researcher records 40 trials from each of 12 macaques and compares two conditions with a t-test on all 480 trials. What is the main problem?\nThe sample size is too small for a t-test\nTrials from the same macaque are not independent, so the standard errors\nare too small\nA t-test cannot handle 480 observations\nEach macaque should be analysed separatelyCheck answer\n\n\nThe 480 trials are not 480 independent pieces of information: trials from the same animal are more alike than trials from different animals. Treating them as independent overstates the evidence (pseudoreplication). A mixed model with a random effect for macaque accounts for this.\n\n\n\n\n2. Which of these datasets is not hierarchical?\nEye-tracking trials recorded from several infants\nVocalisations from individuals living in several social groups\nOne measurement per lizard, with every lizard from a different mother\nNeurons recorded in several sessions from the same monkeysCheck answer\n\n\nIf every lizard has a different mother, there are no clusters: each observation comes from its own “group”. All the other examples have repeated observations within a higher-level unit (infant, social group, session, monkey)."
+  },
+  {
+    "objectID": "self-check.html#goal-2-random-intercepts-and-the-icc",
+    "href": "self-check.html#goal-2-random-intercepts-and-the-icc",
+    "title": "Self-check",
+    "section": "Goal 2: Random intercepts and the ICC",
+    "text": "Goal 2: Random intercepts and the ICC\n\n3. In lmer(dors ~ sex + (1 | mother), data = lizard), what does (1 | mother) do?\nAdds a separate fixed effect for each mother\nGives each mother her own baseline, drawn from a normal distribution\nRemoves the variation between mothers from the data\nLets the effect of sex differ between mothersCheck answer\n\n\n(1 | mother) is a random intercept: each mother gets her own baseline \\(\\alpha_i \\sim N(0, \\sigma^2_{mother})\\). The model estimates how much mothers vary (\\(\\sigma^2_{mother}\\)) instead of a separate parameter for each one. Letting the effect of sex differ between mothers would be a random slope, (sex | mother).\n\n\n\n\n4. The variance between mothers is 1.78 and the residual variance is 2.25. What is the intraclass correlation (ICC)?\n0.79\n0.44\n0.56\n1.26Check answer\n\n\n\\(\\rho = \\dfrac{\\sigma^2_{mother}}{\\sigma^2_{mother} + \\sigma^2} = \\dfrac{1.78}{1.78 + 2.25} = 0.44\\). About 44% of the variability in dorsal scales is due to differences between mothers.\n\n\n\n\n5. What does an ICC close to 0 tell you?\nObservations from the same cluster are hardly more alike than\nobservations from different clusters\nThe model has failed to converge\nThere is no effect of the predictors\nAll observations within a cluster are identicalCheck answer\n\n\nAn ICC near 0 means the clusters explain almost none of the variability, so the grouping matters little. An ICC near 1 would mean observations within a cluster are nearly identical. The ICC says nothing about the fixed effects."
+  },
+  {
+    "objectID": "self-check.html#goal-3-choosing-between-an-lmm-and-a-glmm",
+    "href": "self-check.html#goal-3-choosing-between-an-lmm-and-a-glmm",
+    "title": "Self-check",
+    "section": "Goal 3: Choosing between an LMM and a GLMM",
+    "text": "Goal 3: Choosing between an LMM and a GLMM\n\n6. On each of 20 trials, you record whether an infant looked at the target (1) or not (0). Which model fits best?\nlmer(looked ~ condition + (1 | infant))\nglmer(looked ~ condition + (1 | infant), family = binomial)\nglm(looked ~ condition, family = binomial)\nlm(looked ~ condition)Check answer\n\n\nThe response is binary, so we need a binomial family with a logit link (a GLM), and the trials are grouped within infants, so we need a random effect (a mixed model). Together: a GLMM. The glm() ignores the grouping; lmer() and lm() assume a continuous, normally distributed response.\n\n\n\n\n7. You count the number of aggressive interactions of each individual per week, over 10 weeks. Which model is the natural starting point?\nA Gaussian linear mixed model with a random intercept for individual\nA Poisson (or negative binomial) GLMM with a random intercept for\nindividual\nA binomial GLMM with a random intercept for week\nA separate t-test for each weekCheck answer\n\n\nCounts call for a Poisson family with a log link, or a negative binomial if the counts are overdispersed. Repeated weeks from the same individual call for a random intercept for individual."
+  },
+  {
+    "objectID": "self-check.html#goal-4-interpreting-a-glmm",
+    "href": "self-check.html#goal-4-interpreting-a-glmm",
+    "title": "Self-check",
+    "section": "Goal 4: Interpreting a GLMM",
+    "text": "Goal 4: Interpreting a GLMM\n\n8. In a logistic GLMM, the estimate for session is 0.50. What does this mean?\nFor a typical individual, the odds of a correct answer are multiplied by\nabout 1.65 per session\nThe probability of a correct answer increases by 0.50 per session\nThe population-average probability of a correct answer increases by 50%\nper session\nHalf of the individuals improve from one session to the nextCheck answer\n\n\nCoefficients in a logistic model are on the log-odds scale: \\(e^{0.50} \\approx 1.65\\) is the odds ratio per session. In a GLMM, this is the effect for an individual with random effect \\(b_i = 0\\), the typical individual, not the population average.\n\n\n\n\n9. Why is the population-average curve flatter than the curve of the typical individual in a logistic GLMM?\nAveraging S-shaped curves that are shifted left and right gives a\nflatter curve\nBecause the model is misspecified\nBecause the sample size is small\nBecause random effects shrink the fixed effects towards zeroCheck answer\n\n\nEach individual has its own S-shaped curve, shifted by its random intercept. Averaging these curves at each value of the predictor gives a curve that rises more gently than any single one. In a linear mixed model the two coincide; with a non-linear link such as the logit, they do not.\n\n\n\n\n\n\n\n\n\nWant to go further?\n\n\n\nThe next sessions of Module B3 and B4 cover the hands-on work in R, random slopes and crossed random effects."
+  },
+  {
+    "objectID": "sample-session.html",
+    "href": "sample-session.html",
+    "title": "Sample session",
+    "section": "",
+    "text": "Open the slides Do the exercises Take the self-check"
+  },
+  {
+    "objectID": "sample-session.html#context",
+    "href": "sample-session.html#context",
+    "title": "Sample session",
+    "section": "Context",
+    "text": "Context\n\nAudience: early-career PhD researchers who have used linear models but have not met mixed models before.\nPlace in the curriculum: first session of Module B3, Mixed models. It builds on B1 (linear models) and B2 (GLMs).\nLength: a 15-minute version for the demonstration; in the course, the same input is followed by about an hour of hands-on work."
+  },
+  {
+    "objectID": "sample-session.html#learning-goals",
+    "href": "sample-session.html#learning-goals",
+    "title": "Sample session",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the session, students will be able to:\n\nRecognise when their data are grouped (repeated trials, siblings, individuals in social groups) and why that breaks the independence assumption.\nExplain what a random intercept is and what the intraclass correlation tells them.\nChoose between a linear mixed model and a GLMM based on the type of their response.\nInterpret the coefficients of a GLMM as effects for the typical individual."
+  },
+  {
+    "objectID": "sample-session.html#structure",
+    "href": "sample-session.html#structure",
+    "title": "Sample session",
+    "section": "Structure",
+    "text": "Structure\n\n\n\n\n\n\n\n\nPart\nWhat happens\nGoal\n\n\n\n\nOne model, many names\nt-test, regression, ANOVA, ANCOVA and GLMs as one family, all assuming independent observations\n\n\n\nA simple question\nDo male and female lizards differ in their number of dorsal scales? A t-test says no (\\(p \\approx 0.10\\)).\n\n\n\nWho are their mothers?\nThink-pair-share: “What do you notice?” The 102 lizards come from 29 mothers, and siblings are alike.\n1\n\n\nHierarchical data\nNaming the structure: levels, clusters, and examples from CBB research\n1\n\n\nMother as a fixed effect?\nIt works, but spends 28 parameters on mothers we do not care about\n2\n\n\nThe linear mixed model\nRandom intercepts in lmer(); the sex effect becomes clear\n2\n\n\nHow alike are siblings?\nVariance components and the ICC (\\(\\rho \\approx 0.44\\))\n2\n\n\nWhat if \\(y\\) is not continuous?\nBinary and count outcomes; the link function\n3\n\n\nThe GLMM\nA simulated learning task with glmer(); odds ratios\n3, 4\n\n\nOne thing to remember\nThe average curve is not the curve of the average individual\n4\n\n\nBefore you fit a mixed model, ask…\nThree questions to ask about your own data\n1, 3, 4"
+  },
+  {
+    "objectID": "sample-session.html#in-the-full-course-session",
+    "href": "sample-session.html#in-the-full-course-session",
+    "title": "Sample session",
+    "section": "In the full course session",
+    "text": "In the full course session\nAfter the input, students:\n\nSketch the hierarchy of their own dataset (5 minutes, then compare with a neighbour).\nWork through the exercises: fit a first random-intercept model to the lizard data in the browser, then adapt the code to their own data.\nCompute and interpret the ICC, and discuss: does the grouping matter for their question?\nTake the self-check to see which ideas need another look."
+  },
+  {
+    "objectID": "sample-session.html#data-and-materials",
+    "href": "sample-session.html#data-and-materials",
+    "title": "Sample session",
+    "section": "Data and materials",
+    "text": "Data and materials\n\nLizard data: courtesy of Prof. Geert Verbeke (KU Leuven), from the course Concepts of Multilevel, Longitudinal and Mixed Models.\nThe learning-task data are simulated.\nSlides, code and data: github.com/mmorenozam/demonstration-class-cbb"
+  },
+  {
+    "objectID": "curriculum.html",
+    "href": "curriculum.html",
+    "title": "Curriculum",
+    "section": "",
+    "text": "The programme has three tracks. Track A builds the data skills every analysis depends on, Track B covers statistical modelling, and Track C turns analyses into publications. Students enter where they need to: a short entry self-check tells them which Track A modules they can skip.\nflowchart TB\n  subgraph A[\"Track A: Data skills\"]\n    direction LR\n    A1[\"A1 R and RStudio\"] --&gt; A2[\"A2 Data wrangling\"] --&gt; A3[\"A3 Exploration and visualisation\"] --&gt; A4[\"A4 Reproducible workflows\"]\n  end\n  subgraph B[\"Track B: Statistical modelling\"]\n    direction LR\n    B1[\"B1 Linear models\"] --&gt; B2[\"B2 Generalized linear models\"] --&gt; B3[\"B3 Mixed models\"] --&gt; B4[\"B4 Advanced mixed models\"]\n    B5[\"B5 Study design and power\"]\n  end\n  subgraph C[\"Track C: From analysis to publication\"]\n    direction LR\n    C1[\"C1 Reporting, figures and tables\"] --&gt; C2[\"C2 Reproducible manuscripts and open science\"]\n  end\n  A --&gt; B\n  B --&gt; C\n  classDef default fill:#ffffff,stroke:#333333,color:#000000;\n  style A fill:#ffffff,stroke:#0072B2,stroke-width:2px,color:#000000\n  style B fill:#ffffff,stroke:#D55E00,stroke-width:2px,color:#000000\n  style C fill:#ffffff,stroke:#009E73,stroke-width:2px,color:#000000"
+  },
+  {
+    "objectID": "curriculum.html#format",
+    "href": "curriculum.html#format",
+    "title": "Curriculum",
+    "section": "Format",
+    "text": "Format\n\nTrack A runs as a compact bootcamp at the start of each semester (four sessions), so new PhD researchers are ready for Track B.\nTrack B runs weekly over a semester. Modules B1 to B3 build on each other; B4 and B5 can be taken independently once B3 is done.\nTrack C consists of two workshops, followed by individual consulting on each student’s own manuscript.\nEach session combines a short conceptual input (about 30 to 45 minutes) with hands-on work in R, ideally on the students’ own data.\nLanguage: English. All materials are openly available on this site and on GitHub.\n\nThe table for each track below shows how learning outcomes, activities and assessment are aligned."
+  },
+  {
+    "objectID": "curriculum.html#track-a",
+    "href": "curriculum.html#track-a",
+    "title": "Curriculum",
+    "section": "Track A: Data skills",
+    "text": "Track A: Data skills\n\n\n\n\n\n\n\n\n\n\nModule\nStudents will be able to…\nActivities\nAssessment\n\n\n\n\nA1 R and RStudio\nwrite and run R scripts in an RStudio project; use objects, functions and packages\nlive coding, short exercises in pairs\nin-browser exercises with instant feedback\n\n\nA2 Data wrangling\nimport, clean and reshape data (wide to long) with dplyr and tidyr\ntidy a messy, realistic export (e.g., eye-tracking or behavioural coding)\na tidy dataset ready for modelling\n\n\nA3 Exploration and visualisation\nbuild ggplot2 figures that show distributions, missing data and grouping structure\n“plot before you model” challenge with own data\npeer feedback on one figure\n\n\nA4 Reproducible workflows\nwrite Quarto reports, use Git for version control, organise a project so others can rerun it\nturn an analysis script into a versioned Quarto report\na report that renders on a colleague’s computer"
+  },
+  {
+    "objectID": "curriculum.html#track-b",
+    "href": "curriculum.html#track-b",
+    "title": "Curriculum",
+    "section": "Track B: Statistical modelling",
+    "text": "Track B: Statistical modelling\n\n\n\n\nModule\nStudents will be able to…\nActivities\nAssessment\n\n\n\n\nB1 Linear models\nexpress t-tests, regression, ANOVA and ANCOVA as one linear model; interpret coefficients; check assumptions\nrefit familiar tests with lm() and compare\nself-check, interpreting output\n\n\nB2 Generalized linear models\nchoose a family and link for binary, count and proportion data; interpret results on the link and response scale; detect overdispersion\ncase studies: choices, vocalisation counts\nchoosing and justifying a model for a given dataset\n\n\nB3 Mixed models\nrecognise grouped data; fit and interpret random intercepts, the ICC, LMMs and GLMMs\nsample session, then hands-on with own data\nself-check; an analysis plan for own data\n\n\nB4 Advanced mixed models\nadd random slopes and crossed random effects (e.g., participants and items); handle convergence problems; check models; get started with Bayesian models in brms\nmodel clinics on the students’ own models\na short model-checking report\n\n\nB5 Study design and power\nplan studies with replication and control in mind; run simulation-based power analyses, including for mixed designs\nsimulate the student’s own planned study\na power analysis ready for a proposal or preregistration"
+  },
+  {
+    "objectID": "curriculum.html#track-c",
+    "href": "curriculum.html#track-c",
+    "title": "Curriculum",
+    "section": "Track C: From analysis to publication",
+    "text": "Track C: From analysis to publication\n\n\n\n\n\n\n\n\n\n\nModule\nStudents will be able to…\nActivities\nAssessment\n\n\n\n\nC1 Reporting, figures and tables\nreport LMMs and GLMMs completely (estimates, uncertainty, random effects, software); produce publication-ready figures (patchwork, colour-blind-safe palettes) and tables (gt, modelsummary)\nrework a results section and figure from a recent paper or own draft\na results section and figure from own data, with feedback\n\n\nC2 Reproducible manuscripts and open science\nwrite manuscripts or supplements in Quarto (e.g., APA style for psychology); share code and data on OSF; preregister analyses; respond to statistical reviewer comments\ndraft a reproducible supplement; role-play a reviewer exchange\ncapstone (see below)"
+  },
+  {
+    "objectID": "curriculum.html#capstone-a-reproducible-mini-paper",
+    "href": "curriculum.html#capstone-a-reproducible-mini-paper",
+    "title": "Curriculum",
+    "section": "Capstone: a reproducible mini-paper",
+    "text": "Capstone: a reproducible mini-paper\nThe programme ends with a short, reproducible report on the student’s own data: a methods and results section with figures and tables, rendered from code. Students discuss it in an individual consulting appointment. Because this assessment mirrors what they need for their thesis, it rewards exactly the skills the course is meant to build."
+  },
+  {
+    "objectID": "curriculum.html#how-the-programme-connects",
+    "href": "curriculum.html#how-the-programme-connects",
+    "title": "Curriculum",
+    "section": "How the programme connects",
+    "text": "How the programme connects\n\nConsulting: recurring questions from consulting turn into new short workshops or FAQ entries.\nExisting courses: Track A and B1 build on, and can be coordinated with, the statistics courses already offered in the biology and psychology programmes.\nGraduate schools: modules could be offered as credited courses in the graduate programmes, to be agreed with the programme coordinators."
+  },
+  {
+    "objectID": "approach.html",
+    "href": "approach.html",
+    "title": "Teaching approach",
+    "section": "",
+    "text": "Every session starts from what students should be able to do afterwards, and the activities and checks are built around that (constructive alignment). In the sample session, each of the four learning goals is practised in the lecture and checked again in the self-check."
+  },
+  {
+    "objectID": "approach.html#outcomes-activities-and-assessment-are-aligned",
+    "href": "approach.html#outcomes-activities-and-assessment-are-aligned",
+    "title": "Teaching approach",
+    "section": "",
+    "text": "Every session starts from what students should be able to do afterwards, and the activities and checks are built around that (constructive alignment). In the sample session, each of the four learning goals is practised in the lecture and checked again in the self-check."
+  },
+  {
+    "objectID": "approach.html#concepts-before-code-plots-before-models",
+    "href": "approach.html#concepts-before-code-plots-before-models",
+    "title": "Teaching approach",
+    "section": "2. Concepts before code, plots before models",
+    "text": "2. Concepts before code, plots before models\nStudents first understand why a method is needed, then how to run it in R. Every modelling session starts with a plot of the raw data. In the sample session, a plot of lizards grouped by their mothers makes the need for a mixed model obvious before any equation appears."
+  },
+  {
+    "objectID": "approach.html#students-own-data",
+    "href": "approach.html#students-own-data",
+    "title": "Teaching approach",
+    "section": "3. Students’ own data",
+    "text": "3. Students’ own data\nFrom the second session on, students apply each method to their own project, or to a close match when their data are not ready yet. This makes the content immediately useful and reveals the real problems (messy exports, unbalanced designs, convergence issues) that textbook data hide."
+  },
+  {
+    "objectID": "approach.html#active-learning",
+    "href": "approach.html#active-learning",
+    "title": "Teaching approach",
+    "section": "4. Active learning",
+    "text": "4. Active learning\nShort inputs alternate with hands-on work. Typical formats:\n\nThink-pair-share: “What do you notice in this plot?” before revealing the answer.\nLive coding: students code along; mistakes are made, and fixed, in public.\nPair programming in the data-skills track.\nModel clinics: students present their model and get feedback from peers and the instructor."
+  },
+  {
+    "objectID": "approach.html#a-mixed-audience-by-design",
+    "href": "approach.html#a-mixed-audience-by-design",
+    "title": "Teaching approach",
+    "section": "5. A mixed audience by design",
+    "text": "5. A mixed audience by design\nCBB researchers arrive with very different backgrounds in statistics and programming. The programme handles this by:\n\nModular entry: a short entry self-check tells students which data-skills modules they can skip.\nExamples from all CBB fields: looking-time data, primate field observations, neural recordings, tracking data.\nSeveral routes to the same content: slides, worked code, interactive exercises and recordings.\n\nHow students prefer to learn is partly shaped by the learning environment (the outer layer of Curry’s onion model). Varied formats and well-designed activities are therefore not decoration: they change how students engage."
+  },
+  {
+    "objectID": "approach.html#feedback-throughout-assessment-that-matters",
+    "href": "approach.html#feedback-throughout-assessment-that-matters",
+    "title": "Teaching approach",
+    "section": "6. Feedback throughout, assessment that matters",
+    "text": "6. Feedback throughout, assessment that matters\n\nFormative: anonymous self-checks with explanations after each session, and peer feedback on figures and models.\nSummative: a reproducible mini-paper on the student’s own data (see the curriculum).\n\nWhat is assessed drives what is learned. Assessing a realistic analysis of their own data pushes students towards the skills they will actually use."
+  },
+  {
+    "objectID": "approach.html#open-and-reproducible-materials",
+    "href": "approach.html#open-and-reproducible-materials",
+    "title": "Teaching approach",
+    "section": "7. Open and reproducible materials",
+    "text": "7. Open and reproducible materials\nAll slides, code and exercises are written in Quarto and R, version-controlled and openly available. The materials themselves model the reproducible practice the course teaches."
+  },
+  {
+    "objectID": "approach.html#improving-the-teaching",
+    "href": "approach.html#improving-the-teaching",
+    "title": "Teaching approach",
+    "section": "8. Improving the teaching",
+    "text": "8. Improving the teaching\n\nA one-minute feedback form at the end of each session (“What was clearest? What was muddiest?”).\nSelf-check results show which concepts need another pass.\nQuestions from consulting reveal gaps in the curriculum and lead to new short workshops."
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "These exercises follow the sample session step by step. The code runs in your browser: no installation needed. Type your code in the boxes and press Run Code. Stuck? Open the Hint tab, and compare your answer with the Solution tab."
+  },
+  {
+    "objectID": "exercises.html#part-1-look-at-the-data-first",
+    "href": "exercises.html#part-1-look-at-the-data-first",
+    "title": "Exercises",
+    "section": "Part 1: Look at the data first",
+    "text": "Part 1: Look at the data first\n\nExercise 1.1: How is the data grouped?\nHow many lizards and how many mothers are in lizard? Fill in the blanks.\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nnrow() counts the rows of a data frame. n_distinct() from dplyr counts the different values in a column. Which column identifies the mothers?\n\n\n\n\nnrow(lizard)\nn_distinct(lizard$mother)\n102 lizards from 29 mothers: on average about 3.5 siblings per mother.\n\n\n\n\n\n\nExercise 1.2: Plot before you model\nComplete the code to plot the number of dorsal scales for each mother, coloured by sex. What do you notice?\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe x-axis shows the grouping (mother), the y-axis the response (dors), and the colour the predictor of interest (sex).\n\n\n\n\nggplot(lizard, aes(x = mother, y = dors, colour = sex)) +\n  geom_point(size = 2.5, alpha = 0.8) +\n  labs(x = \"Mother\", y = \"Dorsal scales\") +\n  theme_minimal()\nMothers differ a lot in their typical number of scales, and within a mother, males tend to have more scales than females. Siblings are more alike than unrelated lizards."
+  },
+  {
+    "objectID": "exercises.html#part-2-accounting-for-the-grouping",
+    "href": "exercises.html#part-2-accounting-for-the-grouping",
+    "title": "Exercises",
+    "section": "Part 2: Accounting for the grouping",
+    "text": "Part 2: Accounting for the grouping\n\nExercise 2.1: Ignoring the mothers\nCompare males and females with a two-sample t-test that assumes equal variances. Is there evidence of a difference?\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse t.test() with a formula response ~ group, the data argument and var.equal = TRUE.\n\n\n\n\nt.test(dors ~ sex, data = lizard, var.equal = TRUE)\n\\(p \\approx 0.10\\): no clear evidence of a difference. But the test treats all 102 lizards as independent (df = 100), which they are not.\n\n\n\n\n\n\nExercise 2.2: Your first linear mixed model\nFit a linear mixed model for dors with sex as a fixed effect and a random intercept for mother. Then compare the sex effect with the one from lm(dors ~ sex).\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nA random intercept for mother is written (1 | mother) and added to the formula like any other term: dors ~ sex + (1 | mother).\n\n\n\n\nfit_lm  &lt;- lm(dors ~ sex, data = lizard)\nfit_lmm &lt;- lmer(dors ~ sex + (1 | mother), data = lizard)\n\nsummary(fit_lm)$coefficients\nsummary(fit_lmm)$coefficients\nThe mixed model compares lizards within mothers: the sex effect becomes larger (about \\(-0.83\\) scales for females) and its standard error smaller, so the t value is now about \\(-2.6\\).\nNote that lme4 does not print p-values. The lmerTest package adds them, as in the slides.\n\n\n\n\n\n\nExercise 2.3: How alike are siblings?\nExtract the variance components from fit_lmm and compute the intraclass correlation (ICC).\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe ICC is the share of the total variance that lies between mothers: \\[\\rho = \\frac{\\sigma^2_{mother}}{\\sigma^2_{mother} + \\sigma^2}\\]\n\n\n\n\nfit_lmm &lt;- lmer(dors ~ sex + (1 | mother), data = lizard)\n\nvc &lt;- as.data.frame(VarCorr(fit_lmm))\ns2_mother   &lt;- vc$vcov[vc$grp == \"mother\"]\ns2_residual &lt;- vc$vcov[vc$grp == \"Residual\"]\n\nicc &lt;- s2_mother / (s2_mother + s2_residual)\nicc\n\\(\\rho \\approx 1.78 / (1.78 + 2.25) = 0.44\\): about 44% of the variability in dorsal scales is due to the mother."
+  },
+  {
+    "objectID": "exercises.html#part-3-when-the-response-is-binary",
+    "href": "exercises.html#part-3-when-the-response-is-binary",
+    "title": "Exercises",
+    "section": "Part 3: When the response is binary",
+    "text": "Part 3: When the response is binary\n\nExercise 3.1: Plot the learning curves\nCompute the proportion of correct answers for each individual and session, then plot one line per individual.\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe want one proportion per individual (id) and session (session), and one line per individual.\n\n\n\n\nlearn_sum &lt;- learn |&gt;\n  group_by(id, session) |&gt;\n  summarise(p = mean(correct), .groups = \"drop\")\n\nggplot(learn_sum, aes(x = session, y = p, group = id)) +\n  geom_line(alpha = 0.5) +\n  labs(x = \"Session\", y = \"Proportion correct\") +\n  theme_minimal()\nAll individuals tend to improve, but they start at very different levels: another sign of grouped data.\n\n\n\n\n\n\nExercise 3.2: Fit a GLMM\nFit a logistic GLMM for correct with session as a fixed effect and a random intercept for id. Then compute the odds ratio per session.\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe formula is built just like in lmer(): correct ~ session + (1 | id). For a binary response, use family = binomial.\n\n\n\n\nfit_glmm &lt;- glmer(correct ~ session + (1 | id), family = binomial, data = learn)\n\nsummary(fit_glmm)\n\nexp(fixef(fit_glmm))\nThe estimate for session is on the log-odds scale. exp() turns it into an odds ratio: for a typical individual, the odds of a correct answer are multiplied by this factor in each session. The Std.Dev. of id under Random effects shows how much individuals differ.\n\n\n\n\n\n\nExercise 3.3: Challenge: typical individual or population average?\nUsing fit_glmm, compute the probability of a correct answer in session 8 (a) for a typical individual (\\(b_i = 0\\)) and (b) averaged over the population of individuals. Why do they differ?\n\nExerciseHintSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdd each simulated random intercept b_draw to the linear predictor, transform with plogis(), and take the mean() of the resulting probabilities.\n\n\n\n\nfit_glmm &lt;- glmer(correct ~ session + (1 | id), family = binomial, data = learn)\nbeta &lt;- fixef(fit_glmm)\nsd_b &lt;- as.data.frame(VarCorr(fit_glmm))$sdcor[1]\n\np_typical &lt;- plogis(beta[1] + beta[2] * 8)\n\nb_draw &lt;- rnorm(10000, mean = 0, sd = sd_b)\np_average &lt;- mean(plogis(beta[1] + beta[2] * 8 + b_draw))\n\nc(typical = p_typical, average = p_average)\nThe population average is closer to 50% than the typical individual. Averaging S-shaped curves that are shifted left and right gives a flatter curve: in a GLMM, the fixed effects describe the typical individual, not the population average."
+  },
+  {
+    "objectID": "exercises.html#part-4-your-own-data",
+    "href": "exercises.html#part-4-your-own-data",
+    "title": "Exercises",
+    "section": "Part 4: Your own data",
+    "text": "Part 4: Your own data\nNo code here: take five minutes with pen and paper, then discuss with a neighbour.\n\nWhat is one observation (one row) in your dataset?\nHow are your observations grouped? Sketch the levels, e.g., trials within individuals within groups.\nWhat type is your response? Continuous, binary, a count or a proportion?\nWhich model would you start with, and which random effects would it need?\n\n\n\n\n\n\n\nCheck your understanding\n\n\n\nFinished? Try the self-check for this session."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Statistical consulting",
+    "section": "",
+    "text": "Teaching and consulting are two sides of the same service. Courses give everyone a common foundation; consulting helps with the specific questions of each project."
+  },
+  {
+    "objectID": "consulting.html#what-consulting-covers",
+    "href": "consulting.html#what-consulting-covers",
+    "title": "Statistical consulting",
+    "section": "What consulting covers",
+    "text": "What consulting covers\n\nStudy design and sample size: before data collection, including simulation-based power analysis and preregistration.\nAnalysis: choosing, fitting and checking models for the data at hand.\nInterpretation and reporting: what the results mean and how to present them.\nReviewer comments: responding to statistical questions from journals.\nGrant applications: statistical sections, power analyses and data management plans."
+  },
+  {
+    "objectID": "consulting.html#how-it-works",
+    "href": "consulting.html#how-it-works",
+    "title": "Statistical consulting",
+    "section": "How it works",
+    "text": "How it works\n\nShort request: a brief description of the research question, design, data and timeline, so the first meeting starts well prepared.\nFirst meeting (about 45 minutes): we clarify the question, look at the data together and agree on next steps.\nFollow-up: further meetings as needed, plus weekly open drop-in hours for quick questions.\n\n\n\n\n\n\n\nThe earlier, the better\n\n\n\nThe most valuable consulting happens before data are collected. A short conversation about design and sample size can save months of work later."
+  },
+  {
+    "objectID": "consulting.html#principles",
+    "href": "consulting.html#principles",
+    "title": "Statistical consulting",
+    "section": "Principles",
+    "text": "Principles\n\nGuide, don’t take over. The aim is that researchers understand and can defend their own analysis.\nQuestions first, methods second. We start from the scientific question, not from a statistical test.\nReproducible from the start. Analyses are set up as scripts or Quarto documents that others can rerun.\nFair credit. Substantial statistical contributions are acknowledged according to the usual authorship guidelines."
+  },
+  {
+    "objectID": "consulting.html#feeding-back-into-teaching",
+    "href": "consulting.html#feeding-back-into-teaching",
+    "title": "Statistical consulting",
+    "section": "Feeding back into teaching",
+    "text": "Feeding back into teaching\nQuestions that come up again and again in consulting become new FAQ entries, examples in the courses, or short focused workshops. In this way the curriculum keeps up with what CBB researchers actually need."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Bioestadística en R",
+    "title": "Statistics and Data Science Training for CBB",
     "section": "",
-    "text": "Importante\n\n\n\n\n17.05.2025:\n\nEl video de la clase del 17.05 ya se encuentra en línea.\nRecuerda que la fecha límite de entrega del trabajo final es el 21.06 hasta la medianoche.\n\n15.05.2025:\n\nEl video de la clase del 15.05 ya se encuentra en línea.\n\n10.05.2025:\n\nEl video de la clase del 10.05 ya se encuentra en línea.\n\n08.05.2025:\n\nEl video de la clase del 08.05 ya se encuentra en línea.\n\n26.04.2025:\n\nEl video de la clase del 26.04 ya se encuentra en línea.\n\n24.04.2025:\n\nEl video de la clase del 24.04 ya se encuentra en línea.\n\n12.04.2025:\n\nBienvenidos!\nEl video de la clase se encuentra ya en línea, chequea la pestaña de Recursos"
+    "text": "PhD researchers in CBB come from psychology, behavioural and cognitive biology, systems neuroscience and data science. They collect very different data, from infant eye-tracking and primate field observations to neural recordings and video tracking, but they share the same journey: get the data in shape, model it honestly, and publish it.\nThis site describes a modular training programme built around that journey, and how it connects to statistical consulting."
   },
   {
-    "objectID": "index.html#anuncios",
-    "href": "index.html#anuncios",
-    "title": "Bioestadística en R",
-    "section": "",
-    "text": "Importante\n\n\n\n\n17.05.2025:\n\nEl video de la clase del 17.05 ya se encuentra en línea.\nRecuerda que la fecha límite de entrega del trabajo final es el 21.06 hasta la medianoche.\n\n15.05.2025:\n\nEl video de la clase del 15.05 ya se encuentra en línea.\n\n10.05.2025:\n\nEl video de la clase del 10.05 ya se encuentra en línea.\n\n08.05.2025:\n\nEl video de la clase del 08.05 ya se encuentra en línea.\n\n26.04.2025:\n\nEl video de la clase del 26.04 ya se encuentra en línea.\n\n24.04.2025:\n\nEl video de la clase del 24.04 ya se encuentra en línea.\n\n12.04.2025:\n\nBienvenidos!\nEl video de la clase se encuentra ya en línea, chequea la pestaña de Recursos"
+    "objectID": "index.html#three-tracks-one-path",
+    "href": "index.html#three-tracks-one-path",
+    "title": "Statistics and Data Science Training for CBB",
+    "section": "Three tracks, one path",
+    "text": "Three tracks, one path\n\n\n\nA. Data skills\nR programming, data wrangling, exploration and visualisation, and reproducible workflows. Modular: students skip what they already master.\n\n\n\n\nB. Statistical modelling\nFrom linear models to GLMs and mixed models, plus study design and simulation-based power analysis.\n\n\n\n\nC. From analysis to publication\nReporting statistics, publication-ready figures and tables, reproducible manuscripts and open science.\n\n\n\nSee the full curriculum →"
   },
   {
-    "objectID": "index.html#descripción-del-curso",
-    "href": "index.html#descripción-del-curso",
-    "title": "Bioestadística en R",
-    "section": "Descripción del curso:",
-    "text": "Descripción del curso:\nEl presente curso de estadística tiene cómo propósito el dar un enfoque práctico de metodologías estadísticas comúnmente empleadas en el campo de la biología y la agricultura sin hacer mayor énfasis en teoría y resolución de problemas a mano como usualmente ocurre en el desenvolvimiento de contenidos de cursos tradicionales en estadística. En su lugar, el currículum aquí propuesto busca el dar una visión práctica a sus participantes de cómo los datos pueden ser analizados en base a un orden cronológico dentro de una investigación empezando por la definición de la pregunta objeto de esta, pasando por la decisión del diseño experimental más adecuado y finalizando con su correcto análisis e interpretación de los resultados. En mayor detalle, se abarcan además problemas comunes en el análisis de datos como lo son los análisis exploratorios de carácter formal tales como estadísticos descriptivos, patrones de pérdida de observaciones y visualizaciones; y aquellos de carácter operacional como la preparación y limpieza de datos, buenas prácticas de documentación y programación. Es por ello por lo que se alienta a los participantes a usar sus propios datos a la par de los ejemplos que se pondrán a disposición con el fin de aprovechar el carácter práctico del curso que incluye un comprensivo recorrido en el uso de R, el cual es al momento el lenguaje de programación estadística de mayor predilección en diversas ramas de las ciencias biológicas tanto en la academia como en la industria."
+    "objectID": "index.html#guiding-principles",
+    "href": "index.html#guiding-principles",
+    "title": "Statistics and Data Science Training for CBB",
+    "section": "Guiding principles",
+    "text": "Guiding principles\n\nConcepts before code, plots before models. Every modelling session starts with a picture of the data.\nYour own data. From the second session on, students work on their own projects.\nActive learning. Short inputs, then hands-on work, discussion and feedback.\nAligned outcomes, activities and assessment. Each session states what students will be able to do, and checks it.\nOpen and reproducible. All materials, code and data examples are openly available.\n\nRead more about the teaching approach →"
   },
   {
-    "objectID": "index.html#requisitos",
-    "href": "index.html#requisitos",
-    "title": "Bioestadística en R",
-    "section": "Requisitos:",
-    "text": "Requisitos:\n\nComputador con al menos 2 GB de RAM y procesador de 64 bits"
-  },
-  {
-    "objectID": "index.html#duración",
-    "href": "index.html#duración",
-    "title": "Bioestadística en R",
-    "section": "Duración:",
-    "text": "Duración:\n20 horas de clases online en tiempo real, y\n20 horas autónomo-prácticas, dando un total de\n40 horas"
-  },
-  {
-    "objectID": "index.html#modalidad",
-    "href": "index.html#modalidad",
-    "title": "Bioestadística en R",
-    "section": "Modalidad:",
-    "text": "Modalidad:\n100% Online"
-  },
-  {
-    "objectID": "index.html#horario",
-    "href": "index.html#horario",
-    "title": "Bioestadística en R",
-    "section": "Horario:",
-    "text": "Horario:\nSábados: 12 y 26 de abril, 10 y 17 de mayo de 9H00 a 12H30\nJueves: 24 de abril, 8 y 15 de mayo de 18H30 a 20H30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nNo hay clases los feriados de Semana Santa y Día del Trabajo."
-  },
-  {
-    "objectID": "index.html#contenidos-del-curso",
-    "href": "index.html#contenidos-del-curso",
-    "title": "Bioestadística en R",
-    "section": "Contenidos del curso",
-    "text": "Contenidos del curso\n\n\n\n\n\n\n\nMódulo\nContenido\n\n\n\n\nMódulo 1: Generalidades e Introducción a R\nDuración: 2 horas\n\nGeneralidades\nIntroducción a R\nTipos de datos en R\nOperadores en R\nTipos de objetos en R\nPaquetes y librerías\nOperaciones básicas\nOperaciones estadísticas básicas\nEstadísticos descriptivos\n\n\n\nMódulo 2: Proyectos en R y buenas prácticas de programación\nDuración: 0.5 horas\n\nProyectos en R\nReglas básicas para programar y nombrar objetos en R\nBuenas prácticas de programación\n\n\n\nMódulo 3: Introducción al {tidyverse}\nDuración: 2.5 horas\n\nTipos de tablas\nTidy data\nEl {tidyverse}\nImportación y exportación de datos\nOperaciones con tablas de datos\n\n\n\nMódulo 4: Visualización de datos con {ggplot2}\nDuración: 2.5 horas\n\nFunciones de {ggplot2}\nGeometrías\nEstéticas de geometrías\nFormato de figuras\nAnálisis Exploratorio\n\n\n\nMódulo 5: Introducción a la Estadística Inferencial con R\nDuración: 5 horas\n\nMuestras, poblaciones y muestreos\nParámetros poblaciones y de muestro\nEstimación de parámetros de población.\nIntervalos de confianza\nPruebas de hipótesis\nTipos de errores\nPoder de una prueba estadística\nTamaño del efecto\nColas de una prueba\nPruebas estadísticas paramétricas simples\nPruebas estadísticas no paramétricas\nIntroducción al Análisis de Varianza (ANOVA)\n\n\n\nMódulo 6: Principios básicos de Diseño de Experimentos\nDuración: 2.5 horas\n\nTipos de estudios\nPilares del diseño de experimentos\nRepeticiones\nTamaño de muestra\nDiseño Completamente al Azar (DCA)\nDiseño en Bloques Completamente al Azar (DBCA)\nDiseño Factorial Completo (DFC)\nDiseño Cuadrado Latino (DCL)\nOtros diseños experimentales\n\n\n\nMódulo 7: Otros métodos estadísticos comúnmente usados en Biología\nDuración: 3 horas\n\nRegresión lineal simple y múltiple\nIntroducción a modelos lineales generalizados\nAnálisis de componentes principales\n\n\n\nMódulo 8: Introducción a la creación de reportes con Quarto\nDuración: 2 horas\n\nIntroducción a Quarto y Rmarkdown\nEstructura de un documento de Quarto\nGeneración de nuestro primer reporte\nTipos de documentos en Quarto"
-  },
-  {
-    "objectID": "index.html#objetivos-de-aprendizaje",
-    "href": "index.html#objetivos-de-aprendizaje",
-    "title": "Bioestadística en R",
-    "section": "Objetivos de aprendizaje:",
-    "text": "Objetivos de aprendizaje:\nAl término del curso, el estudiante deberá ser capaz de:\n\nRealizar operaciones básicas en R, tales como: cargar, modificar, limpiar y guardar tablas de datos.\nRealizar gráficos de manera profesional usando R.\nPlanificar y decidir que tipo de diseño experimental deberá usar para llevar a cabo un estudio, dependiendo de la hipótesis del mismo.\nLlevar a cabo análisis exploratorio de datos.\nLlevar a cabo, interpretar y reportar los resultados de metodologías estadísticas tales como: pruebas t, pruebas no paramétricas y análisis de varianza.\nRealizar reportes estadísticos básicos en R."
-  },
-  {
-    "objectID": "index.html#canales-de-comunicación",
-    "href": "index.html#canales-de-comunicación",
-    "title": "Bioestadística en R",
-    "section": "Canales de comunicación:",
-    "text": "Canales de comunicación:\n\nPreguntas durante las sesiones\nConsultas dirigidas al instructor al correo electrónico: mmorenozambrano@gmail.com"
-  },
-  {
-    "objectID": "index.html#sobre-el-instructor",
-    "href": "index.html#sobre-el-instructor",
-    "title": "Bioestadística en R",
-    "section": "Sobre el instructor",
-    "text": "Sobre el instructor\nMauricio Moreno, PhD\nIngeniero en Biotecnología (Universidad de las Fuerzas Armadas - ESPE), cuenta con un máster en Estadística con mención en Biometría (KU Leuven, Bélgica) y un doctorado en Bioinformática (Jacobs University Bremen, Alemania), posee más de diez años de experiencia en programación estadística en R. Ha trabajado como consultor independiente, profesor, analista de estadísticas ambientales e investigador postdoctoral. Actualmente, ocupa el puesto de Científico Bioestadístico en la función de Soluciones de Campo en Bayer Crop Science, liderando proyectos de investigación y desarrollo incluyendo la migración de procesos estadísticos a la nube y determinación de tamaños de muestra mediante simulaciones Montecarlo basados en cadenas de Markov."
-  },
-  {
-    "objectID": "ejercicios_m5.html",
-    "href": "ejercicios_m5.html",
-    "title": "Ejercicios Módulo 5",
-    "section": "",
-    "text": "Notas\n\n\n\n\nLas librerías {ggplot2}, {car} las tablas de datos de {UsingR}, {datarium} y {Stat2Data} están precargadas en la página.\nLa tabla de datos ranas del Prof. Touchon también está precargada."
-  },
-  {
-    "objectID": "ejercicios_m5.html#ejercicios-5.1",
-    "href": "ejercicios_m5.html#ejercicios-5.1",
-    "title": "Ejercicios Módulo 5",
-    "section": "Ejercicios 5.1",
-    "text": "Ejercicios 5.1\nLa concentración media de glucosa en ratones sanos se ha estimado en un rango entre 80 y 100 mg/dL. En un experimento, se han medido las siguientes concentraciones de glucosa en 10 ratones de una línea genética que se presume tendría potencial de ser modelo de hiperglucemia. Determina:\n\n\n\n\n\n\n\n\n1. La media aritmética de la muestra es\n\n\n\n\n\n\n\n\n2. La desviación estándar de la muestra es\n\n\n\n\n\n\n\n\n3. El límite inferior del intervalo de confianza (bajo la distribución de Student) es\n\n\n\n\n\n\n\n\n4. El límite superior del intervalo de confianza (bajo la distribución de Student) es\n\n\n\n\n\n\n\n\n5. La siguiente tabla de datos (blood) tiene las medidas de presión sistólica de sangre correspondientes a 15 pacientes (columna “machine”). De acuerdo al Centro de Prevención y Control de Enfermedades de los Estados Unidos (CDC), una presión sistólica saludable está por debajo de 120 mm Hg. Determina si la media de la muestra contenida en esta tabla de datos está por debajo de este valor sugerido por el CDC.\n\n\n\n\n\n\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nChequea si la muestra es normalmente distribuida y decide si llevar a cabo un test paramétrico o no paramétrico.\n\n\n\n\nChequeamos normalidad\n\nlibrary(UsingR) # donde se encuentra la tabla de datos de blood\n\nshapiro.test(blood$Machine)\n\n\n    Shapiro-Wilk normality test\n\ndata:  blood$Machine\nW = 0.96996, p-value = 0.8575\n\n\nCon un valor p mayor a 0.05 podemos concluir que la muestra está normalmente distribuida.\nPara probar la hipótesis (que la presión sistólica está por debajo del valor sugerido por el CDC de 120 mm Hg), usaremos una prueba t de una cola. Específicamente, la prueba de “inferioridad”\n\nt.test(blood$Machine, mu = 120, alternative = \"less\")\n\n\n    One Sample t-test\n\ndata:  blood$Machine\nt = -9.9155, df = 14, p-value = 5.188e-08\nalternative hypothesis: true mean is less than 120\n95 percent confidence interval:\n     -Inf 91.71055\nsample estimates:\nmean of x \n     85.6 \n\n\nCon un valor p menor a 0.05, concluimos que la hipótesis nula es rechazada. En esta prueba la hipótesis nula establece que la media de la presión sistólica de estos pacientes está por encima del valor de 120. En otras palabras, la muestra de pacientes sugiere que corresponden a una población que no padece de presión alta.\n\n\n\n\n6. La tabla de datos normtemp tiene las medidas en grados Fahrenheit de temperatura corporal (columna “temperature”) correspondientes a 65 mujeres y 65 hombres (columna “gender”). Determina si existe una diferencia entre las temperaturas corporales de hombres y mujeres\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nChequea si la muestra es normalmente distribuida y decide si llevar a cabo un test paramétrico o no paramétrico.\n\n\n\n\nChequeamos normalidad\n\nlibrary(UsingR) # donde se encuentra la tabla de datos de normtemp\n\n# normalidad de los datos de los hombres\nshapiro.test(subset(normtemp, gender == 1)$temperature)\n\n\n    Shapiro-Wilk normality test\n\ndata:  subset(normtemp, gender == 1)$temperature\nW = 0.98941, p-value = 0.8545\n\n# normalidad de los datos de las mujeres\nshapiro.test(subset(normtemp, gender == 2)$temperature)\n\n\n    Shapiro-Wilk normality test\n\ndata:  subset(normtemp, gender == 2)$temperature\nW = 0.96797, p-value = 0.09017\n\n\nEn ambos casos, con valores p mayor a 0.05 podemos concluir tanto las mediciones de temperatura de hombres y mujeres están normalmente distribuidas. Por lo tanto podemos aplicar una prueba t de muestras independientes.\nRecuerda que gracias a la corrección de Welch, no es necesario cumplir el supuesto de la homocedasticidad.\n\nt.test(subset(normtemp, gender == 1)$temperature, subset(normtemp, gender == 2)$temperature)\n\n\n    Welch Two Sample t-test\n\ndata:  subset(normtemp, gender == 1)$temperature and subset(normtemp, gender == 2)$temperature\nt = -2.2854, df = 127.51, p-value = 0.02394\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.53964856 -0.03881298\nsample estimates:\nmean of x mean of y \n 98.10462  98.39385 \n\n# o tambien:\nt.test(normtemp$temperature ~ normtemp$gender)\n\n\n    Welch Two Sample t-test\n\ndata:  normtemp$temperature by normtemp$gender\nt = -2.2854, df = 127.51, p-value = 0.02394\nalternative hypothesis: true difference in means between group 1 and group 2 is not equal to 0\n95 percent confidence interval:\n -0.53964856 -0.03881298\nsample estimates:\nmean in group 1 mean in group 2 \n       98.10462        98.39385 \n\n\nCon un valor p menor a 0.05, concluimos que la hipótesis nula es rechazada. Es decir, existe diferencia estadísticamente significativa entre la media de temperatura entre hombres y mujeres. Donde, la temperatura media de los hombres es menor con respecto a la de las mujeres.\n\n\n\n\n7. La tabla de datos mice2 tiene las medidas del peso de 10 ratones antes y después de haber sido sometidos a una determinada dieta. Encuentra si existe una diferencia significativa en el peso de estos ratones antes y después del régimen de dieta al que fueron expuestos. ¿Ganaron o perdieron peso?\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nChequea si la muestra es normalmente distribuida y decide si llevar a cabo un test paramétrico o no paramétrico.\n\n\n\n\nChequeamos la normalidad\n\nlibrary(datarium) # donde se encuentra la tabla de datos mice2\n\n# normalidad de los datos antes de la dieta\nshapiro.test(mice2$before)\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice2$before\nW = 0.92399, p-value = 0.3914\n\n# normalidad de los datos despues de la dieta\nshapiro.test(mice2$after)\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice2$after\nW = 0.95283, p-value = 0.7021\n\n\nCon valores p mayores a 0.05, podemos concluir que los datos están normalmente distribuidos. Cómo se tratan de observaciones tomadas de los mismos ratones antes y después de la dieta, entendemos que los datos están correlacionados. Por lo tanto, lo más conveniente es aplicar una prueba t de muestras emparejadas\n\nt.test(mice2$before, mice2$after, paired = T)\n\n\n    Paired t-test\n\ndata:  mice2$before and mice2$after\nt = -25.546, df = 9, p-value = 1.039e-09\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n -217.1442 -181.8158\nsample estimates:\nmean difference \n        -199.48 \n\n\nCon un valor p menor a 0.05, podemos concluir que existe una diferencia estadísticamente significativa en el peso de los ratones antes y después de la dieta en una media de 199.48 gramos\n\n\n\n\n8. En el vector colon (parte de los datos cancer de {UsingR}), está el tiempo de sobrevivencia en días de pacientes con cáncer de colon desde el momento de su diagnóstico hasta su deceso. Determina si la media de los días de supervivencia de esos pacientes es de 370 días\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nChequea si la muestra es normalmente distribuida y decide si llevar a cabo un test paramétrico o no paramétrico.\n\n\n\n\nChequeamos si los datos están normalmente distribuidos (aplicando las transformaciones logarítmica y raíz cuadrada, los datos se pueden normalizar. Asumamos por un instante que este no es el caso para ilustrar el uso de la prueba de Wilcoxon para datos que no están normalmente distribuidos).\n\nlibrary(UsingR) # de donde provienen los datos de cancer de colon\n\ncolon &lt;- cancer$colon\n\nshapiro.test(colon)\n\n\n    Shapiro-Wilk normality test\n\ndata:  colon\nW = 0.76056, p-value = 0.0006134\n\n\nAplicamos la prueba de Wilcoxon para probar la hipótesis nula (que la media de supervivencia es de 370 días)\n\nwilcox.test(colon, mu = 370)\n\n\n    Wilcoxon signed rank exact test\n\ndata:  colon\nV = 78, p-value = 0.9632\nalternative hypothesis: true location is not equal to 370\n\n\nComo podemos, con un valor p mayor a 0.05, podemos concluir que la hipótesis alternativa se acepta. Es decir, que la media de supervivencia de esta muestra de pacientes con cáncer de colon es de 370 días."
-  },
-  {
-    "objectID": "ejercicios_m5.html#ejercicios-5.2",
-    "href": "ejercicios_m5.html#ejercicios-5.2",
-    "title": "Ejercicios Módulo 5",
-    "section": "Ejercicios 5.2",
-    "text": "Ejercicios 5.2\n\n\n\n\n\n\nNotas sobre los siguientes ejercicios\n\n\n\n\nDebido a problemas de compatibilidad de las versiones de librerías de R para la página web, algunas funciones no corren correctamente.\nTe recomiendo resolver estos ejercicios en tu computador y luego compararlas con las soluciones aquí mostradas.\n\n\n\n\n\n\n\n1. Lleva a cabo un ANOVA de una vía con los datos de las ranas. El objetivo es encontrar si existe alguna diferencia entre la edad de salida del agua (Age.FromEmergence) determinada por los predadores (Pred).\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nAntes de llevar a cabo tu análisis, ten en cuenta lo siguiente:\n\nChequea los supuestos del ANOVA.\nEs posible que necesites transformar la variable de respuesta.\n{emmeans} puede generar las medias esperadas re-transformadas a sus unidades originales. Ejemplo: emmeans(lm2, specs = \"Pred\", type = \"response\")\n\n\n\n\n\n1. Comenzamos con un breve análisis exploratorio\n\nlibrary(ggplot2)\nranas |&gt; \n  ggplot(aes(x = Pred, y = Age.FromEmergence)) + \n  geom_boxplot() \n\n\n\n\n\n\n\n\nA un primer vistazo, podemos ya sospechar que la edad a la que emergen los renacuajos está altamente influenciada por la presencia de depredadores en el medio (menor tiempo en emerger en su presencia).\n2. Llevo a cabo el ANOVA de una vía y chequeo los supuestos\n\nlibrary(car)\nranas1 &lt;- lm(Age.FromEmergence ~ Pred, data = ranas)\n# normalidad de los residuales\nresiduos &lt;- ranas1$residuals\nshapiro.test(residuos)\n\n\n    Shapiro-Wilk normality test\n\ndata:  residuos\nW = 0.89687, p-value = 1.134e-05\n\n# homogeneidad de la varianza\nleveneTest(ranas1)\n\nLevene's Test for Homogeneity of Variance (center = median)\n      Df F value   Pr(&gt;F)   \ngroup  2  6.7212 0.002066 **\n      75                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nVeo que ambos supuestos no se cumplen, aplico una transformación logarítmica y chequeo de nuevo.\n\nranas2 &lt;- lm(log(Age.FromEmergence) ~ Pred, data = ranas)\n# normalidad de los residuales\nresiduos &lt;- ranas2$residuals\nshapiro.test(residuos)\n\n\n    Shapiro-Wilk normality test\n\ndata:  residuos\nW = 0.98017, p-value = 0.2645\n\n# homogeneidad de la varianza\nleveneTest(ranas2)\n\nLevene's Test for Homogeneity of Variance (center = median)\n      Df F value  Pr(&gt;F)  \ngroup  2  3.3772 0.03941 *\n      75                  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nLa homogeneidad aún no se cumple. Podría intentar otras transformaciones, pero tengo otra opción. La función leveneTest tiene por default centrar la prueba alrededor de la mediana. También es válido el centrar la prueba alrededor de la media, esto lo conseguimos simplemente agregando un argumento a esta función, así:\n\n# homogeneidad de la varianza\nleveneTest(ranas2, center = \"mean\")\n\nLevene's Test for Homogeneity of Variance (center = \"mean\")\n      Df F value  Pr(&gt;F)  \ngroup  2  3.0464 0.05345 .\n      75                  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n3. Interpreto mi ANOVA\n\nAnova(ranas2)\n\nAnova Table (Type II tests)\n\nResponse: log(Age.FromEmergence)\n          Sum Sq Df F value    Pr(&gt;F)    \nPred       9.710  2  12.389 2.244e-05 ***\nResiduals 29.392 75                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nComo ya lo veíamos venir, al menos uno de los tratamientos tiene una media distinta.\n4. Llevo a cabo comparaciones múltiples\nEn este punto es importante recordar que hemos transformado la variable de respuesta para cumplir con los supuestos del ANOVA. Podríamos llevar a cabo las comparaciones múltiples directamente sobre esta transformación, pero eso implicaría que tendremos que hacer las transformación de vuelta de manera manual en algún momento. Para evitarnos eso, {emmeans} nos ofrece la funcionalidad de que lleva a cabo esa transformación por nosotros si utilizamos el argumento type:\n\nlibrary(emmeans)\nlibrary(multcomp)\nmmranas &lt;- emmeans(ranas2, specs = \"Pred\", type = \"response\")\ntukey_comps &lt;- contrast(mmranas, specs = \"Pred\", method = \"tukey\")\ncld(tukey_comps)\n\n contrast ratio    SE df null t.ratio p.value .group\n L / NL   0.604 0.121 75    1  -2.516  0.0368  1    \n C / NL   1.307 0.262 75    1   1.335  0.3806   2   \n C / L    2.165 0.339 75    1   4.936  &lt;.0001    3  \n\nP value adjustment: tukey method for comparing a family of 3 estimates \nTests are performed on the log scale \nsignificance level used: alpha = 0.05 \nNOTE: If two or more means share the same grouping symbol,\n      then we cannot show them to be different.\n      But we also did not show them to be the same. \n\n\n\n\n\n\n2. Lleva a cabo un ANOVA de dos vías no aditivo con los datos BirdCalcium de {Stat2Data}. Estos datos corresponden a las mediciones de calcio en el plasma de petirrojos. 10 petirrojos macho y 10 petirrojos hembras fueron divididos en grupos de 5. A 5 aves de cada sexo les fueron suministradas hormonas, mientras que a las 5 restantes se les suministró una dieta control. La pregunta de investigación consistió en determinar si posibles variaciones de calcio en estas aves dependen del sexo, hormonas o una interacción de estas\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nAntes de llevar a cabo tu análisis, ten en cuenta lo siguiente:\n\nChequea los supuestos del ANOVA.\nEs posible que necesites transformar la variable de respuesta.\n{emmeans} puede generar las medias esperadas re-transformadas a sus unidades originales. Ejemplo: emmeans(lm2, specs = \"Pred\", type = \"response\")\n\n\n\n\n\n1. Comenzamos con un breve análisis exploratorio\nAquí, una consideración importante. Es necesario que le dejemos saber a R que el factor O2Conc es de hecho un factor. Tal cual lo tenemos en la tabla original, este aparece como un número\n\nlibrary(Stat2Data)\nlibrary(ggplot2)\nlibrary(patchwork)\ndata(\"BirdCalcium\")\np1 &lt;- BirdCalcium |&gt;\n  ggplot(aes(x = Sex, y = Ca)) +\n  geom_boxplot()\np2 &lt;- BirdCalcium |&gt;\n  ggplot(aes(x = Hormone, y = Ca)) +\n  geom_boxplot()\np1+p2\n\n\n\n\n\n\n\n\nA un primer vistazo, podemos esperar a encontrar diferencias estadísticamente significativas entre los niveles de calcio determinados por la presencia de hormonas en la dieta, pero no tanto con respecto al sexo de los petirrojos.\n2. Llevo a cabo el ANOVA de una vía y chequeo los supuestos\n\nlibrary(car)\nbird &lt;- lm(Ca ~ Sex * Hormone, data = BirdCalcium)\n# normalidad de los residuales\nresiduos &lt;- bird$residuals\nshapiro.test(residuos)\n\n\n    Shapiro-Wilk normality test\n\ndata:  residuos\nW = 0.9759, p-value = 0.871\n\n# homogeneidad de la varianza\nleveneTest(bird)\n\nLevene's Test for Homogeneity of Variance (center = median)\n      Df F value  Pr(&gt;F)  \ngroup  3  2.6582 0.08353 .\n      16                  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nVeo que ambos supuestos se cumplen.\n3. Interpreto mi ANOVA\n\nAnova(bird)\n\nAnova Table (Type II tests)\n\nResponse: Ca\n             Sum Sq Df F value    Pr(&gt;F)    \nSex           45.90  1  2.3459    0.1451    \nHormone     1268.82  1 64.8410 5.095e-07 ***\nSex:Hormone    0.36  1  0.0186    0.8931    \nResiduals    313.09 16                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nEn este caso, solo uno de los efectos principales es significativo: Hormone. La interacción y el sexo de los petirrojos no influyen en diferencias de la concentración de calcio en su plasma sanguíneo.\n5. Llevo a cabo gráficos de interacción\n\nlibrary(emmeans)\np3 &lt;- emmip(bird, Sex ~ Hormone)\np4 &lt;- emmip(bird, Hormone ~ Sex)\np3 + p4\n\n\n\n\n\n\n\n\nComo vemos en los gráficos de interacción, las líneas de interacción paralelas. Algo que era de esperarse al ya haber visto en la tabla del ANOVA que el valor p de la interacción fue mayor a 0.05.\n4. Llevo a cabo comparaciones múltiples\nEn este caso ya no resulta necesario por cuanto el efecto principal que estadísticamente es significativo posee únicamente dos niveles, es fácil distinguir a partir del primer gráfico que hicimos en nuestro breve análisis exploratorio la inclusión de hormonas en la dieta de los petirrojos determina un incremento de Ca en su plasma sanguíneo."
-  },
-  {
-    "objectID": "ejercicios_m3.html",
-    "href": "ejercicios_m3.html",
-    "title": "Ejercicios Módulo 3",
-    "section": "",
-    "text": "Nota\n\n\n\nEn los siguientes ejercicios se usan {ggplot2}, {dplyr} y {tidyr} que están precargados en la página. No es necesario que invoques las librerías."
-  },
-  {
-    "objectID": "ejercicios_m3.html#ejercicios-3.1",
-    "href": "ejercicios_m3.html#ejercicios-3.1",
-    "title": "Ejercicios Módulo 3",
-    "section": "Ejercicios 3.1",
-    "text": "Ejercicios 3.1\n1. El operador de cascada de base de R es |&gt;\n\n\n\n\n\n\n\n\n2. Este es un buen nombre para un objeto en R: conteo semanal\n\n\n\n\n\n\n\n\n3. Cuando digo que una tabla está en formato largo, puedo decir que es rectangular\n\n\n\n\n\n\n\n\n4. Z es una función, Y es un objeto. Con la expresión Y(Z) estoy evaluando Y en función de Z\n\n\n\n\n\n\n\n\n5. La tabla msleep del paquete {ggplot2} tiene 83 filas y 11 columnas\n\n\n\n\n\n\n\n\n6. Estas expresiones dan el mismo resultado\nmsleep %&gt;% \n  filter(order == \"Primates\" | sleep_total &gt;= 10)\n\nmsleep %&gt;% \n  filter(order == \"Primates\", sleep_total &gt;= 10)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7. Estas expresión filtra la tabla iris excluyendo la categoría virginica de la columna Species\niris %&gt;% \n  filter(Species != \"virginica\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8. Deseo calcular la suma de Petal.Width por Species de la tabla iris. ¿Es correcta la siguiente expresión?\niris %&gt;% \n  filter(Species) %&gt;%\n  summarize(suma = sum())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9. ¿Cómo harías para que la tabla iris se vea de la siguiente manera?\n       largo.sepal ancho.sepal largo.petalo ancho.petalo  especies\n1            5.1         3.5          1.4          0.2    setosa\n2            4.9         3.0          1.4          0.2    setosa\n3            4.7         3.2          1.3          0.2    setosa\n4            4.6         3.1          1.5          0.2    setosa\n5            5.0         3.6          1.4          0.2    setosa\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara cambiar el nombre y el orden de las columnas, puedes usar la función select de {dplyr}.\n\n\n\n\niris %&gt;%\n  select(largo.sepal = Sepal.Length, ancho.sepal = Sepal.Width,\n         largo.petalo = Petal.Length, ancho.petalo = Petal.Width,\n         especies = Species)\n\n\n\n\n10. Usando la tabla de datos msleep de la libreía {ggplot2}, crea una tabla con los estadísticos conteo, media aritmética, mediana, desviación estándar y coeficiente de variación agrupadas por la variable vore de la variable sleep_total (un fragmento de código guía es provisto, reemplaza los espacios vacíos de la manera más conveniente).\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsa la función group_by de {dplyr} para agrupar por una (o más) variable (s)\n\n\n\n\nmsleep |&gt;\n  filter(!is.na(vore)) %&gt;% # para filtrar valores perdidos en la variable vore\n  group_by(vore) |&gt;\n  summarise(conteo = n(), media_aritmetica = mean(sleep_total, na.rm = T),\n            mediana = median(sleep_total, na.rm = T),\n            desv_est = sd(sleep_total, na.rm = T),\n            coef_var = desv_est / media_aritmetica * 100)"
-  },
-  {
-    "objectID": "ejercicios_m3.html#ejercicios-3.2",
-    "href": "ejercicios_m3.html#ejercicios-3.2",
-    "title": "Ejercicios Módulo 3",
-    "section": "Ejercicios 3.2",
-    "text": "Ejercicios 3.2\nLas siguientes preguntas pueden tener más de una respuesta correcta.\n1. ¿Por qué debemos cambiar el backslash (\\) por slash (/) en R?\n\n\n\n\n\n\n\n\n2. En la función write.csv, si el argumento row.names no es seteado como F lo que sucede es\n\n\n\n\n\n\n\n\n3. mtcars, es una tabla de R base cuya disposición es rectangular\n\n\n\n\n\n\n\n\nConsidera el siguiente código para responder las siguientes preguntas\n\n\n\n\n\n\n\n\n\n\n\n3. En la línea 1 estamos creando una copia de mtcars\n\n\n\n\n\n\n\n\n4. En la línea 3 estamos\n\n\n\n\n\n\n\n\n4. En las líneas 4 a 7 estamos\n\n\n\n\n\n\n\n\n5. La expresión -c(\"marca\") significa\n\n\n\n\n\n\n\n\n6. Podemos reemplazar -c(\"marca\") por simplemente - marca"
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "A Quarto Live Document",
-    "section": "",
-    "text": "#|setup: true\n#|exercise:\n#|  - ex_a1\n#|  - ex_a2\nvar_xyz &lt;- c(1, 3, 7, 9, 13, 15)\n\n\n#| exercise: ex_a1\nvar_xyz * 2\n\n\n#| exercise: ex_a2\nvar_xyz ** 2"
-  },
-  {
-    "objectID": "ejercicios_m7.html",
-    "href": "ejercicios_m7.html",
-    "title": "Ejercicios Módulo 7",
-    "section": "",
-    "text": "Notas\n\n\n\n\nPara los Ejercicios 7.1, usaremos la tabla de datos “carpitas”"
-  },
-  {
-    "objectID": "ejercicios_m7.html#ejercicios-7.1",
-    "href": "ejercicios_m7.html#ejercicios-7.1",
-    "title": "Ejercicios Módulo 7",
-    "section": "Ejercicios 7.1",
-    "text": "Ejercicios 7.1\nLa tabla de datos “carpitas” contiene información del censo de corrientes biológicas de Maryland. En esta, se recogen datos obtenidos de la población de carpitas rinconeras (Rhinichthys cataractae) en varias corrientes de agua de ese estado en USA. La descripción de esta tabla de datos es la siguiente:\n\n\n\nStream: nombre de la corriente de agua\nlongnose: número de carpitas/75 metros de corriente\nacerage: área (acres) drenada por la corriente\nDO2: oxígeno disuelto (mg/L)\n\n\n\nmaxdepth: profundidad máxima (cm)\nNO3: concentración de nitrato (mg/L)\nSO4: concentración de sulfato (mg/L)\ntemp: temperatura del agua\n\n\n\nLos datos se encuentran en el siguiente cuadro de código. Copia, pega y ejecuta el mismo en tu sesión de R que la tengas disponible para este ejercicio.\n\nInput = (\"\nStream                   longnose  acerage  DO2   maxdepth  NO3   SO4     temp\nBASIN_RUN                  13         2528    9.6  80        2.28  16.75   15.3\nBEAR_BR                    12         3333    8.5  83        5.34   7.74   19.4\nBEAR_CR                    54        19611    8.3  96        0.99  10.92   19.5\nBEAVER_DAM_CR              19         3570    9.2  56        5.44  16.53   17\nBEAVER_RUN                 37         1722    8.1  43        5.66   5.91   19.3\nBENNETT_CR                  2          583    9.2  51        2.26   8.81   12.9\nBIG_BR                     72         4790    9.4  91        4.1    5.65   16.7\nBIG_ELK_CR                164        35971   10.2  81        3.2   17.53   13.8\nBIG_PIPE_CR                18        25440    7.5  120       3.53   8.2    13.7\nBLUE_LICK_RUN               1         2217    8.5  46        1.2   10.85   14.3\nBROAD_RUN                  53         1971   11.9  56        3.25  11.12   22.2\nBUFFALO_RUN                16        12620    8.3  37        0.61  18.87   16.8\nBUSH_CR                    32        19046    8.3  120       2.93  11.31   18\nCABIN_JOHN_CR              21         8612    8.2  103       1.57  16.09   15\nCARROLL_BR                 23         3896   10.4  105       2.77  12.79   18.4\nCOLLIER_RUN                18         6298    8.6  42        0.26  17.63   18.2\nCONOWINGO_CR              112        27350    8.5  65        6.95  14.94   24.1\nDEAD_RUN                   25         4145    8.7  51        0.34  44.93   23\nDEEP_RUN                    5         1175    7.7  57        1.3   21.68   21.8\nDEER_CR                    26         8297    9.9  60        5.26  6.36    19.1\nDORSEY_RUN                  8         7814    6.8  160       0.44  20.24   22.6\nFALLS_RUN                  15         1745    9.4  48        2.19  10.27   14.3\nFISHING_CR                 11         5046    7.6  109       0.73   7.1    19\nFLINTSTONE_CR              11        18943    9.2  50        0.25  14.21   18.5\nGREAT_SENECA_CR            87         8624    8.6  78        3.37   7.51   21.3\nGREENE_BR                  33         2225    9.1  41        2.3    9.72   20.5\nGUNPOWDER_FALLS            22        12659    9.7  65        3.3    5.98   18\nHAINES_BR                  98         1967    8.6  50        7.71  26.44   16.8\nHAWLINGS_R                  1         1172    8.3  73        2.62   4.64   20.5\nHAY_MEADOW_BR               5          639    9.5  26        3.53   4.46   20.1\nHERRINGTON_RUN              1         7056    6.4  60        0.25   9.82   24.5\nHOLLANDS_BR                38         1934   10.5  85        2.34  11.44   12\nISRAEL_CR                  30         6260    9.5  133       2.41  13.77   21\nLIBERTY_RES                12          424    8.3  62        3.49   5.82   20.2\nLITTLE_ANTIETAM_CR         24         3488    9.3  44        2.11  13.37   24\nLITTLE_BEAR_CR              6         3330    9.1  67        0.81   8.16   14.9\nLITTLE_CONOCOCHEAGUE_CR    15         2227    6.8  54        0.33   7.6    24\nLITTLE_DEER_CR             38         8115    9.6  110       3.4    9.22   20.5\nLITTLE_FALLS               84         1600   10.2  56        3.54   5.69   19.5\nLITTLE_GUNPOWDER_R          3        15305    9.7  85        2.6    6.96   17.5\nLITTLE_HUNTING_CR          18         7121    9.5  58        0.51   7.41   16\nLITTLE_PAINT_BR            63         5794    9.4  34        1.19  12.27   17.5\nMAINSTEM_PATUXENT_R       239         8636    8.4  150       3.31   5.95   18.1\nMEADOW_BR                 234         4803    8.5  93        5.01  10.98   24.3\nMILL_CR                     6         1097    8.3  53        1.71  15.77   13.1\nMORGAN_RUN                 76         9765    9.3  130       4.38   5.74   16.9\nMUDDY_BR                   25         4266    8.9  68        2.05  12.77   17\nMUDLICK_RUN                 8         1507    7.4  51        0.84  16.3    21\nNORTH_BR                   23         3836    8.3  121       1.32   7.36   18.5\nNORTH_BR_CASSELMAN_R       16        17419    7.4  48        0.29   2.5    18\nNORTHWEST_BR                6         8735    8.2  63        1.56  13.22   20.8\nNORTHWEST_BR_ANACOSTIA_R  100        22550    8.4  107       1.41  14.45   23\nOWENS_CR                   80         9961    8.6  79        1.02   9.07   21.8\nPATAPSCO_R                 28         4706    8.9  61        4.06   9.9    19.7\nPINEY_BR                   48         4011    8.3  52        4.7    5.38   18.9\nPINEY_CR                   18         6949    9.3  100       4.57  17.84   18.6\nPINEY_RUN                  36        11405    9.2  70        2.17  10.17   23.6\nPRETTYBOY_BR               19          904    9.8  39        6.81   9.2    19.2\nRED_RUN                    32         3332    8.4  73        2.09   5.5    17.7\nROCK_CR                     3          575    6.8  33        2.47   7.61   18\nSAVAGE_R                  106        29708    7.7  73        0.63  12.28   21.4\nSECOND_MINE_BR             62         2511   10.2  60        4.17  10.75   17.7\nSENECA_CR                  23        18422    9.9  45        1.58   8.37   20.1\nSOUTH_BR_CASSELMAN_R        2         6311    7.6  46        0.64  21.16   18.5\nSOUTH_BR_PATAPSCO          26         1450    7.9  60        2.96   8.84   18.6\nSOUTH_FORK_LINGANORE_CR    20         4106   10.0  96        2.62   5.45   15.4\nTUSCARORA_CR               38        10274    9.3  90        5.45  24.76   15\nWATTS_BR                   19          510    6.7  82        5.25  14.19   26.5\n\")\n\ncarpitas = read.table(textConnection(Input),header=TRUE)\n\nCon todo lo aprendido con respecto a la regresión lineal múltiple y las regresiones de Poisson/negativa binomial:\n1. Selecciona variables usando una regresión lineal múltiple como inicio (full model) para explicar el número de carpitas (longnose)\n2. Mejora el modelo de ser necesario (transformación de datos, remoción de outliers)\n3. A partir de tu modelo seleccionado, modela longnose usando las distribuciones de Poisson y binomial negativa\n4. Evalúa tus modelos y determina cual seleccionarías finalmente"
-  },
-  {
-    "objectID": "ejercicios_m7.html#ejercicios-7.2",
-    "href": "ejercicios_m7.html#ejercicios-7.2",
-    "title": "Ejercicios Módulo 7",
-    "section": "Ejercicios 7.2",
-    "text": "Ejercicios 7.2\nLleva a cabo APCs con las tablas de datos mtcars e iris (ambas son bases de datos de R base). Para mtcars usa como etiquetas los nombres de los autos y como variable de agrupamiento la variable gear. Para iris, usa como variable de agrupamiento la variable Species"
-  },
-  {
-    "objectID": "recursos.html",
-    "href": "recursos.html",
-    "title": "Recursos",
-    "section": "",
-    "text": "17.05.2025: video disponible aquí\n15.05.2025: video disponible aquí\n10.05.2025: video disponible aquí\n08.05.2025: video disponible aquí\n12.04.2025: Video disponible aquí\n24.04.2025: Video disponible aquí\n26.04.2025: Video disponible aquí"
-  },
-  {
-    "objectID": "recursos.html#clases-grabadas",
-    "href": "recursos.html#clases-grabadas",
-    "title": "Recursos",
-    "section": "",
-    "text": "17.05.2025: video disponible aquí\n15.05.2025: video disponible aquí\n10.05.2025: video disponible aquí\n08.05.2025: video disponible aquí\n12.04.2025: Video disponible aquí\n24.04.2025: Video disponible aquí\n26.04.2025: Video disponible aquí"
-  },
-  {
-    "objectID": "recursos.html#tablas-de-datos-extras-usadas-en-las-diapositivas",
-    "href": "recursos.html#tablas-de-datos-extras-usadas-en-las-diapositivas",
-    "title": "Recursos",
-    "section": "Tablas de datos extras (usadas en las diapositivas)",
-    "text": "Tablas de datos extras (usadas en las diapositivas)\n\n\n\nNombre\nDescripción\n\n\n\n\nrotXLS.xlsx\nDatos históricos de casos de rotavirus y variables ambientales de la ciudad de Berlin\n\n\ntitatic.csv\nDatos de sobrevivientes del Titanic en varios niveles de agregación (ejemplo, por género)\n\n\ntouchon.csv\nDatos de depredadores de la rana arbórea de ojos rojos (investigación del Prof. Justin C. Touchon)\n\n\n\nSe encuentran disponibles AQUI"
-  },
-  {
-    "objectID": "recursos.html#recursos-extras",
-    "href": "recursos.html#recursos-extras",
-    "title": "Recursos",
-    "section": "Recursos extras",
-    "text": "Recursos extras\n\nLibros (gratis)\nLearning Statistics with R de Danielle Navarro: excelente libro para comenzar el viaje de aprendizaje de R. Explica conceptos estadísticos de una manera sencilla y evitando complicadas fórmulas tanto como puede.\nModern Statistics with R de Måns Thulin: es un ebook que abarca a mayor profundidad aspectos de operaciones con bases de datos y modelos estadísticos más complejos que los que cubrimos en el curso.\nR for Data Science de Hadley Wickham, Mine Çetinkaya-Rundel y Garrett Grolemund: es un excelente recurso para llevar a cabo modelamiento de datos desde los principios más básicos hasta la implementación de flujos de trabajo para producción. Está bastante focalizado en el uso del tidyverse.\nRStudio para Estadística Descriptiva en Ciencias Sociales de Giorgio Boccardo Bosoni y Felipe Ruiz Bruzzone: es un ebook que contiene buena información en español sobre R. Al menos para la transformación de objetos y conducción de estadísticos descriptivos.\n\n\nSitios web\nStackOverflow\ntowards data science\nSTHDA"
-  },
-  {
-    "objectID": "final.html",
-    "href": "final.html",
-    "title": "Trabajo final",
-    "section": "",
-    "text": "Important\n\n\n\nLee detenidamente las siguientes instrucciones antes de llevar a cabo el trabajo final."
-  },
-  {
-    "objectID": "final.html#generalidades",
-    "href": "final.html#generalidades",
-    "title": "Trabajo final",
-    "section": "Generalidades",
-    "text": "Generalidades\nIndependientemente de la opción que escoja el estudiante, el trabajo final deberá ser presentado de la siguiente manera:\n\nEn forma de un archivo .zip conteniendo el proyecto de RStudio con todos los scripts usados para renderizar el trabajo final. No hace falta adjuntar los datos usados para el análisis.\nEl archivo final renderizado puede ser presentado en formatos .pdf, .docx o .html\nEl plazo final para la entrega del trabajo a mi correo electrónico (mmorenozambrano@gmail.com) es el 21 de Junio, 23H59 hora de Ecuador."
-  },
-  {
-    "objectID": "final.html#opciones-de-trabajo-final",
-    "href": "final.html#opciones-de-trabajo-final",
-    "title": "Trabajo final",
-    "section": "Opciones de trabajo final",
-    "text": "Opciones de trabajo final\nPara aprobar el curso, el estudiante tendrá la posibilidad de optar entre las siguientes opciones:\nOpción 1:\nPresentación de un reporte estadístico con datos del estudiante o citando la fuente de los mismos. La decisión de las metodologías estadísticas es completamente libre.\nOpción 2:\nPresentación de un reporte estadístico con datos que proporciono a continuación. El estudiante deberá seguir las instrucciones de metodologías estadísticas a usar."
-  },
-  {
-    "objectID": "final.html#datos-para-la-opción-2",
-    "href": "final.html#datos-para-la-opción-2",
-    "title": "Trabajo final",
-    "section": "Datos para la opción 2",
-    "text": "Datos para la opción 2\nDeberás usar la tabla de datos community-health-evaluation-dataset, para cargarla en tu sesión de R, usa el siguiente código\n\ngit_url &lt;- \"https://raw.githubusercontent.com/mmorenozam/biohack-website/refs/heads/main/data/community_health_evaluation_dataset.csv\"\n\ndf_health &lt;- read.csv(git_url)\n\nEsta tabla comprende datos cuyo gol es el de evaluar servicios de salud comunitarios y su calidad de atención. Cada fila representa información de un paciente único. Las variables son:\nParticipant.ID: identificador único de cada paciente\nAge: edad del participante.\nGender: género (“M”: masculino, “F”: femenino).\nSES: estado socioeconómico en escala del 1 al 4.\nService.Type: tipo de servicio de salud accedido por el participante.\nVisit.Frequency: frecuencia de las visitas al doctor\nStep.Frequency..steps.min.: media del número de pasos tomados por minuto.\nStride.Length..m.: media de la longitud de un paso, medida en metros.\nJoint.Angle....: media del ángulo durante el movimiento, medida en grados.\nEMG.Activity: nivel de la actividad muscular medida por electromiografía.\nPatient.Satisfaction..1.10.: nivel de satisfacción del participante, medido en una escal del 1 al 10.\nQuality.of.Life.Score: medida de la calidad de vida del participante entre 50 y 100\nPara trabajar con estos datos, es necesario que pienses y formules hipótesis de investigación podrían servir como buenos indicadores de la calidad de los servicios sanitarios.\nEl análisis de datos deberá incluir al menos:\n\nAplicación de ANOVA de una vía\nAplicación de ANOVA de dos vías con interacción\nModelamiento de una regresión múltiple\nAplicación de análisis de componentes principales\n\nEn caso de cualquier duda, siéntete libre de contactarme."
-  },
-  {
-    "objectID": "ejercicios_demo.html",
-    "href": "ejercicios_demo.html",
-    "title": "Demo de los ejercicios",
-    "section": "",
-    "text": "Esta sección está dedicada a que los estudiantes puedan resolver ejercicios de una manera más dinámica a lo largo del curso e iré actualizándola con el contenido correspondiente cada semana.\nContiene preguntas de opción múltiple, verdadero/falso, así como también pequeños ejercicios que podrán resolver de manera interactiva. Aquí un par de ejemplos:\n1. La hija de Don Ramón es\n\n\n\n\n\n\n\n\n2. La raíz cuadrada de 23105 es:"
-  },
-  {
-    "objectID": "ejercicios_m1.html",
-    "href": "ejercicios_m1.html",
-    "title": "Ejercicios Módulo 1",
-    "section": "",
-    "text": "1. Los creadores de R fueron Gentleman e Ihaka de la Universidad de Auckland\n\n\n\n\n\n\n\n\n2. 5 * 5 * 5 es equivalente a 5 ^ 3\n\n\n\n\n\n\n\n\n3. Una lista es un arreglo que admite datos de una sola clase únicamente\n\n\n\n\n\n\n\n\n4. Queremos comparar si x es igual a 5, es la siguiente expresión correcta? x = 5\n\n\n\n\n\n\n\n\n5. La función data.frame nos permite crear manualmente tablas de datos\n\n\n\n\n\n\n\n\n6. Al crear un objeto de esta forma: 1_cuenta = 12 R lo crea sin error alguno\n\n\n\n\n\n\n\n\n7. Si dejo un espacio en el nombre de un objeto, R me devuelve un error\n\n\n\n\n\n\n\n\n8. El comando install.libraries me permite instalar librerías\n\n\n\n\n\n\n\n\n9. En la expresión genérica mean(x, . . .) los puntos representan argumentos\n\n\n\n\n\n\n\n\n10. Es la siguiente expresión correcta: z -&gt; c(1, 2, 3)"
-  },
-  {
-    "objectID": "ejercicios_m1.html#ejercicios-1.1",
-    "href": "ejercicios_m1.html#ejercicios-1.1",
-    "title": "Ejercicios Módulo 1",
-    "section": "",
-    "text": "1. Los creadores de R fueron Gentleman e Ihaka de la Universidad de Auckland\n\n\n\n\n\n\n\n\n2. 5 * 5 * 5 es equivalente a 5 ^ 3\n\n\n\n\n\n\n\n\n3. Una lista es un arreglo que admite datos de una sola clase únicamente\n\n\n\n\n\n\n\n\n4. Queremos comparar si x es igual a 5, es la siguiente expresión correcta? x = 5\n\n\n\n\n\n\n\n\n5. La función data.frame nos permite crear manualmente tablas de datos\n\n\n\n\n\n\n\n\n6. Al crear un objeto de esta forma: 1_cuenta = 12 R lo crea sin error alguno\n\n\n\n\n\n\n\n\n7. Si dejo un espacio en el nombre de un objeto, R me devuelve un error\n\n\n\n\n\n\n\n\n8. El comando install.libraries me permite instalar librerías\n\n\n\n\n\n\n\n\n9. En la expresión genérica mean(x, . . .) los puntos representan argumentos\n\n\n\n\n\n\n\n\n10. Es la siguiente expresión correcta: z -&gt; c(1, 2, 3)"
-  },
-  {
-    "objectID": "ejercicios_m1.html#ejercicios-1.2",
-    "href": "ejercicios_m1.html#ejercicios-1.2",
-    "title": "Ejercicios Módulo 1",
-    "section": "Ejercicios 1.2",
-    "text": "Ejercicios 1.2\nDado el siguiente objeto:\n\n\n\n\n\n\n\n\n1. Es el elemento vector_ejemplo conformado por valores:\n\n\n\n\n\n\n\n\n2. Para acceder a la tercera fila de la primera columna del elemento tabla_de_datos, ¿Cuál(es) de las siguientes líneas de código es(son) la(s) correcta(s)?\na) ev_1$tabla_de_datos[[1]]\nb) ev_1$tabla_de_datos[1, 3]\nc) ev_1[[1]][3,1]\nd) ev_1$tabla_de_datos$columna_2[3]\ne) ev_1[[2]][3,1]\nf) ev_1$tabla_de_datos$columna_1[3]\n\n\n\n\n\n\n\n\n3. Deseo concatenar escalar_ejemplo con vector_ejemplo (en ese orden) en un elemento adicional del objeto ev_1 de nombre conc_ejemplo, ¿Cuál de las siguientes líneas de código es la correcta?\na) ev_1[[4]] &lt;- ev_1[[2]] + ev_1[[3]]\nb) ev_1$conc_ejemplo &lt;- c(ev_1[[3]],ev_1[[2]])\nc) ev_1$conc_ejemplo &lt;- c(ev_1$vector_escalar + ev_1$ejemplo_escalar)\n\n\n\n\n\n\n\n\n4. Deseo reemplazar el cuarto elemento de columna_2 en la tabla_de_datos por la letra “E”, ¿Cuál sería una solución?\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUna forma de acceder al cuarto elemento de columna_2 en tabla_de_datos es:\nev_1$tabla_de_datos$columna_2[4]\n\n\n\n\nev_1$tabla_de_dates$columna_2[4] &lt;- \"E\"\n\n\n\n\n5. Supongamos que para un determinado análisis con tabla_de_datos, la columna_2 corresponde a mi factor. En este factor mi nivel de referencia es “E”. ¿Cómo especifico en R que este sea el caso?\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUn ejemplo de código para establecer los niveles de un factor está disponible en las diapositivas\n\n\n\n\nev_1$tabla_de_dates$columna_2 &lt;- relevel(as.factor(ev_1$tabla_de_dates$columna_2, ref = \"E\")"
-  },
-  {
-    "objectID": "ejercicios_m1.html#ejercicios-1.3",
-    "href": "ejercicios_m1.html#ejercicios-1.3",
-    "title": "Ejercicios Módulo 1",
-    "section": "Ejercicios 1.3",
-    "text": "Ejercicios 1.3\n1. El coeficiente de variación es adimensional\n\n\n\n\n\n\n\n\n2. La media poblacional se aproxima a la media muestral con una corrección\n\n\n\n\n\n\n\n\n3. La desviación estándar muestral es un estimador de la poblacional después de una corrección\n\n\n\n\n\n\n\n\n4. La moda es igual al valor medio de una distribución\n\n\n\n\n\n\n\n\n5. El primer cuartil corresponde al 50% de probabilidad de una distribución\n\n\n\n\n\n\n\n\n6. Usando la variable disp de mtcars, calcula la media aritmética, la desviación estándar, la varianza, el tercer cuartil y el coeficiente de variación"
-  },
-  {
-    "objectID": "ejercicios_m4.html",
-    "href": "ejercicios_m4.html",
-    "title": "Ejercicios Módulo 4",
-    "section": "",
-    "text": "Notas\n\n\n\n\nLa tabla de las ranas de Touchon así como las librerías {ggplot2}, {dplyr}, {viridis}, {patchwork} y {tidyr} están precargadas en la página."
-  },
-  {
-    "objectID": "ejercicios_m4.html#ejercicios-4.1",
-    "href": "ejercicios_m4.html#ejercicios-4.1",
-    "title": "Ejercicios Módulo 4",
-    "section": "Ejercicios 4.1",
-    "text": "Ejercicios 4.1\n\n\n\n\n\n\n\n1. Usando la tabla de datos ranas, trata de recrear el gráfico a continuación\n\n\n\n\n\n\n\n\n\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nLas variables longitud nariz-cloaca al emerger y edad de metamorfosis corresponden a Age.DPO y SVL.initial de la tabla de datos las ranas\n\n\n\n\n\nranas |&gt;\n  ggplot(aes(x = Age.DPO,\n             y = SVL.initial,\n             color = Pred)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", aes(fill = Pred)) +\n  labs(x = \"Edad de metamorfosis (d)\",\n       y = \"Longitud nariz-cloaca al emerger (mm)\") +\n  theme_bw()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n2. Llena los espacios vacíos del siguiente código para generar el gráfico a continuación\n\n\n\n\n\n\n\n\n\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariables:\nPeso después de reabsorción de la cola: Mass.final Recursos: Res Edad de incubación: Hatch Tipo de predador: Pred\n\n\n\n\n\nresumen_ranas &lt;- ranas |&gt;\n  group_by(Pred, Hatch, Res) |&gt;\n  summarise(media = mean(Mass.final),\n            desv.est = sd(Mass.final),\n            se = desv.est/sqrt(n()))\n\n`summarise()` has grouped output by 'Pred', 'Hatch'. You can override using the\n`.groups` argument.\n\nresumen_ranas |&gt;\n  ggplot(aes(x = Hatch,\n             y = media,\n             color = Pred, \n             group = Pred)) +\n  geom_point() +\n  geom_line() + \n  geom_errorbar(aes(ymin = media - se, ymax = media + se), width = 0.1) +\n  facet_grid(~Res) +\n  labs(title = \"Gráfico de interacción de la edad de\\nincubación con el peso final por tipo de recursos\",\n       x = \"Edad de incubación\",\n       y = \"Peso después de\\nreabsorción de la cola (g)\",\n       caption = \"Barras de error representan el error estándar de las medias\",\n       color = \"Tipo de predador\") +\n  theme_bw() +\n  scale_color_viridis(discrete = T) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\n\n\n\n\n3. Con la tabla de datos ranas, trata de recrear el gráfico a continuación\n\n\n\n\n\n\n\n\n\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariables:\nEdad de metamorfosis: Age.DPO Longitud de la cola al emerger: Tail.initial Recursos: Res Edad de incubación: Hatch Tipo de predador: Pred\n\n\n\n\n\nranas |&gt;\n  ggplot(aes(x = Age.DPO,\n             y = Tail.initial,\n             color = Pred)) +\n  geom_point(size = 3, alpha = 0.5) +\n  facet_grid(Hatch ~ Res) +\n  theme_linedraw() +\n  labs(title = \"Gráficos de dispersión de edad de\\nmetamorfosis vs. Longitud de la cola al emerger\",\n       subtitle = \"Paneles arreglados por recursos y edad de incubación\",\n       x = \"Edad de metamorfosis\",\n       y = \"Longitud de la cola (mm)\")\n\n\n\n\n\n\n\n\n\n\n\n\n4. La tabla de datos world_bank_pop de {tidyr} contiene información acerca la población mundial entre los años 2000 al 2018. Con esta, trata de recrear el siguiente gráfico\n\n\n\n\n\n\n\n\n\n\nEjercicioHintsSolución\n\n\n\n\n\n\n\n\n\n\n\n\n\nHints están en forma de comentarios en el código\n\n\n\n\n\nresumen_pob &lt;- world_bank_pop %&gt;%\n  filter(indicator %in% c(\"SP.POP.GROW\", \"SP.URB.GROW\")) %&gt;%\n  filter(country %in% c(\"ECU\", \"JPN\")) %&gt;%\n  pivot_longer(!c(country, indicator), names_to = \"year\", values_to = \"pob\") \n\nresumen_pob %&gt;%\n  ggplot(aes(x = year, \n             y = pob, \n             group = indicator, \n             color = factor(indicator,\n                            levels = c(\"SP.POP.GROW\",\n                                       \"SP.URB.GROW\"),\n                            labels = c(\"Total\", \"Urbana\")))) +\n  geom_line() +\n  geom_point()+\n  facet_wrap(~country) +\n  theme_classic() +\n  theme(axis.text.x = element_text(angle = 45, \n                                   hjust = 1)) +\n  labs(title = \"Tazas de crecimiento de Ecuador y Japón\\nEntre 2000 y 2017\",\n       x = \"Año\", y = \"Taza de crecimiento\", color = \"Tipo de taza\")\n\n\n\n\n\n\n\n\n\n\n\n\n5. Escoge 2 o más de los gráficos que hiciste anteriormente, y combínalos usando {patchwork} usando las fórmulas p1+p2 o (p1+p2)/p3"
+    "objectID": "index.html#explore",
+    "href": "index.html#explore",
+    "title": "Statistics and Data Science Training for CBB",
+    "section": "Explore",
+    "text": "Explore\n\n\n\nSample session\nThe demonstration lecture Introduction to generalized linear mixed models, and how it fits into the course.\nGo to the sample session\n\n\n\n\nExercises and self-check\nInteractive R exercises that run in the browser, and a short anonymous quiz with explanations.\nTry the exercises · Take the self-check\n\n\n\n\nConsulting\nHow individual statistical consulting works, and how it feeds back into the teaching.\nAbout consulting"
   }
 ]

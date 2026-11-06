@@ -1,0 +1,36 @@
+---
+title: "Statistical consulting"
+subtitle: "Individual support for planning, analysing and publishing research"
+---
+
+Teaching and consulting are two sides of the same service. Courses give everyone a common foundation; consulting helps with the specific questions of each project.
+
+## What consulting covers
+
+- **Study design and sample size:** before data collection, including simulation-based power analysis and preregistration.
+- **Analysis:** choosing, fitting and checking models for the data at hand.
+- **Interpretation and reporting:** what the results mean and how to present them.
+- **Reviewer comments:** responding to statistical questions from journals.
+- **Grant applications:** statistical sections, power analyses and data management plans.
+
+## How it works
+
+1. **Short request:** a brief description of the research question, design, data and timeline, so the first meeting starts well prepared.
+2. **First meeting (about 45 minutes):** we clarify the question, look at the data together and agree on next steps.
+3. **Follow-up:** further meetings as needed, plus weekly open drop-in hours for quick questions.
+
+::: {.callout-tip}
+## The earlier, the better
+The most valuable consulting happens **before** data are collected. A short conversation about design and sample size can save months of work later.
+:::
+
+## Principles
+
+- **Guide, don't take over.** The aim is that researchers understand and can defend their own analysis.
+- **Questions first, methods second.** We start from the scientific question, not from a statistical test.
+- **Reproducible from the start.** Analyses are set up as scripts or Quarto documents that others can rerun.
+- **Fair credit.** Substantial statistical contributions are acknowledged according to the usual authorship guidelines.
+
+## Feeding back into teaching
+
+Questions that come up again and again in consulting become new FAQ entries, examples in the courses, or short focused workshops. In this way the [curriculum](curriculum.qmd) keeps up with what CBB researchers actually need.

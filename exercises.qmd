@@ -1,0 +1,507 @@
+---
+title: "Exercises"
+subtitle: "Introduction to generalized linear mixed models"
+format:
+  live-html:
+    theme:
+      light: [cosmo, theme.scss]
+    toc: true
+    toc-location: right
+    toc-title: On this page
+    code-copy: true
+    code-overflow: wrap
+webr:
+  packages: ["ggplot2", "dplyr", "lme4"]
+engine: knitr
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+These exercises follow the [sample session](sample-session.qmd) step by step. The code runs **in your browser**: no installation needed. Type your code in the boxes and press **Run Code**. Stuck? Open the **Hint** tab, and compare your answer with the **Solution** tab.
+
+::: {.callout-note}
+## Before you start
+- The first time, loading R and the packages `ggplot2`, `dplyr` and `lme4` takes up to a minute. Wait until the boxes are ready.
+- Two datasets are already loaded:
+  - `lizard`: 102 lizards from 29 mothers, with `mother`, `sex` (Male or Female) and `dors` (number of dorsal scales). Data courtesy of Prof. Geert Verbeke (KU Leuven).
+  - `learn`: a **simulated** learning task, 30 individuals (`id`) doing 10 trials per session over 8 sessions (`session`), with `correct` (1 or 0). It is the same simulated dataset as in the slides.
+:::
+
+```{webr}
+#| setup: true
+#| exercise:
+#|   - ex_1_1
+#|   - ex_1_2
+#|   - ex_2_1
+#|   - ex_2_2
+#|   - ex_2_3
+#|   - ex_3_1
+#|   - ex_3_2
+#|   - ex_3_3
+library(ggplot2)
+library(dplyr)
+library(lme4)
+
+lizard <- read.table(header = TRUE, text = "
+mother sex dors
+2 0 37
+2 0 39
+2 0 35
+2 1 35
+3 0 35
+4 0 37
+4 1 35
+5 1 35
+5 1 35
+5 1 37
+6 0 34
+6 0 35
+6 0 36
+6 1 36
+6 1 35
+6 1 36
+7 1 38
+7 1 37
+8 0 36
+8 1 35
+9 0 37
+9 1 33
+10 0 37
+10 0 39
+10 1 36
+10 1 35
+11 1 34
+12 0 38
+12 0 42
+12 1 36
+12 1 37
+12 1 34
+13 0 36
+14 0 35
+14 0 37
+14 1 34
+15 0 30
+15 0 32
+15 1 32
+15 1 33
+15 1 30
+16 0 36
+16 0 32
+17 0 35
+17 0 35
+17 1 35
+17 1 36
+18 0 36
+18 1 32
+18 1 34
+18 1 36
+18 1 34
+19 0 33
+19 0 31
+19 0 30
+19 0 34
+19 1 32
+20 0 35
+20 0 36
+20 1 35
+20 1 34
+20 1 33
+21 0 34
+21 0 34
+21 0 36
+21 1 37
+21 1 34
+22 0 37
+22 0 38
+22 0 37
+22 0 35
+22 1 37
+22 1 37
+23 0 36
+23 1 33
+23 1 33
+23 1 34
+23 1 35
+24 0 34
+24 0 33
+24 1 33
+24 1 32
+25 0 36
+25 0 35
+25 1 37
+25 1 37
+25 1 36
+25 1 40
+26 0 36
+26 1 35
+26 1 33
+26 1 31
+27 1 34
+28 0 36
+28 1 36
+28 1 32
+29 0 34
+29 0 36
+29 0 36
+29 1 35
+30 0 36
+30 1 35
+")
+lizard$sex    <- factor(lizard$sex, levels = c(0, 1), labels = c("Male", "Female"))
+lizard$mother <- factor(lizard$mother)
+
+set.seed(2026)
+n_id     <- 30
+sessions <- 1:8
+n_trials <- 10
+b_true   <- rnorm(n_id, mean = 0, sd = 1.5)
+learn <- expand.grid(id = 1:n_id, session = sessions, trial = 1:n_trials)
+learn$correct <- rbinom(nrow(learn), size = 1,
+                        prob = plogis(-1.5 + 0.5 * (learn$session - 1) + b_true[learn$id]))
+learn$id <- factor(learn$id)
+```
+
+## Part 1: Look at the data first
+
+### Exercise 1.1: How is the data grouped?
+
+**How many lizards and how many mothers are in `lizard`? Fill in the blanks.**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_1_1
+nrow(____)
+n_distinct(lizard$____)
+```
+
+## Hint
+
+::: {.hint exercise="ex_1_1"}
+`nrow()` counts the rows of a data frame. `n_distinct()` from `dplyr` counts the different values in a column. Which column identifies the mothers?
+:::
+
+## Solution
+
+::: {.solution exercise="ex_1_1"}
+```r
+nrow(lizard)
+n_distinct(lizard$mother)
+```
+
+102 lizards from 29 mothers: on average about 3.5 siblings per mother.
+:::
+
+:::
+
+### Exercise 1.2: Plot before you model
+
+**Complete the code to plot the number of dorsal scales for each mother, coloured by sex. What do you notice?**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_1_2
+ggplot(lizard, aes(x = ____, y = ____, colour = ____)) +
+  geom_point(size = 2.5, alpha = 0.8) +
+  labs(x = "Mother", y = "Dorsal scales") +
+  theme_minimal()
+```
+
+## Hint
+
+::: {.hint exercise="ex_1_2"}
+The x-axis shows the grouping (`mother`), the y-axis the response (`dors`), and the colour the predictor of interest (`sex`).
+:::
+
+## Solution
+
+::: {.solution exercise="ex_1_2"}
+```r
+ggplot(lizard, aes(x = mother, y = dors, colour = sex)) +
+  geom_point(size = 2.5, alpha = 0.8) +
+  labs(x = "Mother", y = "Dorsal scales") +
+  theme_minimal()
+```
+
+Mothers differ a lot in their typical number of scales, and within a mother, males tend to have more scales than females. Siblings are more alike than unrelated lizards.
+:::
+
+:::
+
+## Part 2: Accounting for the grouping
+
+### Exercise 2.1: Ignoring the mothers
+
+**Compare males and females with a two-sample t-test that assumes equal variances. Is there evidence of a difference?**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_2_1
+
+```
+
+## Hint
+
+::: {.hint exercise="ex_2_1"}
+Use `t.test()` with a formula `response ~ group`, the `data` argument and `var.equal = TRUE`.
+:::
+
+## Solution
+
+::: {.solution exercise="ex_2_1"}
+```r
+t.test(dors ~ sex, data = lizard, var.equal = TRUE)
+```
+
+$p \approx 0.10$: no clear evidence of a difference. But the test treats all 102 lizards as independent (`df = 100`), which they are not.
+:::
+
+:::
+
+### Exercise 2.2: Your first linear mixed model
+
+**Fit a linear mixed model for `dors` with `sex` as a fixed effect and a random intercept for `mother`. Then compare the sex effect with the one from `lm(dors ~ sex)`.**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_2_2
+fit_lm  <- lm(dors ~ sex, data = lizard)
+fit_lmm <- lmer(____, data = lizard)
+
+summary(fit_lm)$coefficients
+summary(fit_lmm)$coefficients
+```
+
+## Hint
+
+::: {.hint exercise="ex_2_2"}
+A random intercept for `mother` is written `(1 | mother)` and added to the formula like any other term: `dors ~ sex + (1 | mother)`.
+:::
+
+## Solution
+
+::: {.solution exercise="ex_2_2"}
+```r
+fit_lm  <- lm(dors ~ sex, data = lizard)
+fit_lmm <- lmer(dors ~ sex + (1 | mother), data = lizard)
+
+summary(fit_lm)$coefficients
+summary(fit_lmm)$coefficients
+```
+
+The mixed model compares lizards **within** mothers: the sex effect becomes larger (about $-0.83$ scales for females) and its standard error smaller, so the `t value` is now about $-2.6$.
+
+Note that `lme4` does not print p-values. The `lmerTest` package adds them, as in the slides.
+:::
+
+:::
+
+### Exercise 2.3: How alike are siblings?
+
+**Extract the variance components from `fit_lmm` and compute the intraclass correlation (ICC).**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_2_3
+fit_lmm <- lmer(dors ~ sex + (1 | mother), data = lizard)
+
+vc <- as.data.frame(VarCorr(fit_lmm))
+vc
+
+s2_mother   <- vc$vcov[vc$grp == "mother"]
+s2_residual <- vc$vcov[vc$grp == "Residual"]
+
+icc <- ____
+icc
+```
+
+## Hint
+
+::: {.hint exercise="ex_2_3"}
+The ICC is the share of the total variance that lies between mothers:
+$$\rho = \frac{\sigma^2_{mother}}{\sigma^2_{mother} + \sigma^2}$$
+:::
+
+## Solution
+
+::: {.solution exercise="ex_2_3"}
+```r
+fit_lmm <- lmer(dors ~ sex + (1 | mother), data = lizard)
+
+vc <- as.data.frame(VarCorr(fit_lmm))
+s2_mother   <- vc$vcov[vc$grp == "mother"]
+s2_residual <- vc$vcov[vc$grp == "Residual"]
+
+icc <- s2_mother / (s2_mother + s2_residual)
+icc
+```
+
+$\rho \approx 1.78 / (1.78 + 2.25) = 0.44$: about 44% of the variability in dorsal scales is due to the mother.
+:::
+
+:::
+
+## Part 3: When the response is binary
+
+### Exercise 3.1: Plot the learning curves
+
+**Compute the proportion of correct answers for each individual and session, then plot one line per individual.**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_3_1
+learn_sum <- learn |>
+  group_by(____, ____) |>
+  summarise(p = mean(correct), .groups = "drop")
+
+ggplot(learn_sum, aes(x = session, y = p, group = ____)) +
+  geom_line(alpha = 0.5) +
+  labs(x = "Session", y = "Proportion correct") +
+  theme_minimal()
+```
+
+## Hint
+
+::: {.hint exercise="ex_3_1"}
+We want one proportion per individual (`id`) and session (`session`), and one line per individual.
+:::
+
+## Solution
+
+::: {.solution exercise="ex_3_1"}
+```r
+learn_sum <- learn |>
+  group_by(id, session) |>
+  summarise(p = mean(correct), .groups = "drop")
+
+ggplot(learn_sum, aes(x = session, y = p, group = id)) +
+  geom_line(alpha = 0.5) +
+  labs(x = "Session", y = "Proportion correct") +
+  theme_minimal()
+```
+
+All individuals tend to improve, but they start at very different levels: another sign of grouped data.
+:::
+
+:::
+
+### Exercise 3.2: Fit a GLMM
+
+**Fit a logistic GLMM for `correct` with `session` as a fixed effect and a random intercept for `id`. Then compute the odds ratio per session.**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_3_2
+fit_glmm <- glmer(____, family = ____, data = learn)
+
+summary(fit_glmm)
+
+exp(fixef(fit_glmm))
+```
+
+## Hint
+
+::: {.hint exercise="ex_3_2"}
+The formula is built just like in `lmer()`: `correct ~ session + (1 | id)`. For a binary response, use `family = binomial`.
+:::
+
+## Solution
+
+::: {.solution exercise="ex_3_2"}
+```r
+fit_glmm <- glmer(correct ~ session + (1 | id), family = binomial, data = learn)
+
+summary(fit_glmm)
+
+exp(fixef(fit_glmm))
+```
+
+The estimate for `session` is on the log-odds scale. `exp()` turns it into an odds ratio: for a **typical individual**, the odds of a correct answer are multiplied by this factor in each session. The `Std.Dev.` of `id` under *Random effects* shows how much individuals differ.
+:::
+
+:::
+
+### Exercise 3.3: Challenge: typical individual or population average?
+
+**Using `fit_glmm`, compute the probability of a correct answer in session 8 (a) for a typical individual ($b_i = 0$) and (b) averaged over the population of individuals. Why do they differ?**
+
+::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_3_3
+fit_glmm <- glmer(correct ~ session + (1 | id), family = binomial, data = learn)
+beta <- fixef(fit_glmm)
+sd_b <- as.data.frame(VarCorr(fit_glmm))$sdcor[1]
+
+# (a) typical individual
+p_typical <- plogis(beta[1] + beta[2] * 8)
+
+# (b) population average: simulate many individuals and average their probabilities
+b_draw <- rnorm(10000, mean = 0, sd = sd_b)
+p_average <- ____
+
+c(typical = p_typical, average = p_average)
+```
+
+## Hint
+
+::: {.hint exercise="ex_3_3"}
+Add each simulated random intercept `b_draw` to the linear predictor, transform with `plogis()`, and take the `mean()` of the resulting probabilities.
+:::
+
+## Solution
+
+::: {.solution exercise="ex_3_3"}
+```r
+fit_glmm <- glmer(correct ~ session + (1 | id), family = binomial, data = learn)
+beta <- fixef(fit_glmm)
+sd_b <- as.data.frame(VarCorr(fit_glmm))$sdcor[1]
+
+p_typical <- plogis(beta[1] + beta[2] * 8)
+
+b_draw <- rnorm(10000, mean = 0, sd = sd_b)
+p_average <- mean(plogis(beta[1] + beta[2] * 8 + b_draw))
+
+c(typical = p_typical, average = p_average)
+```
+
+The population average is closer to 50% than the typical individual. Averaging S-shaped curves that are shifted left and right gives a flatter curve: in a GLMM, the fixed effects describe the **typical individual**, not the population average.
+:::
+
+:::
+
+## Part 4: Your own data
+
+No code here: take five minutes with pen and paper, then discuss with a neighbour.
+
+1. **What is one observation** (one row) in your dataset?
+2. **How are your observations grouped?** Sketch the levels, e.g., trials within individuals within groups.
+3. **What type is your response?** Continuous, binary, a count or a proportion?
+4. **Which model** would you start with, and which random effects would it need?
+
+::: {.callout-tip}
+## Check your understanding
+Finished? Try the [self-check](self-check.qmd) for this session.
+:::

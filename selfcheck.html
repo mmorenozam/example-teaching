@@ -1,0 +1,56 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var boxes = document.querySelectorAll(".selfcheck");
+  var total = boxes.length;
+  var solved = 0;
+  var scoreEl = document.getElementById("sc-score");
+
+  function updateScore() {
+    if (scoreEl) {
+      scoreEl.textContent = solved + " of " + total + " questions answered correctly";
+    }
+  }
+
+  boxes.forEach(function (box) {
+    var btn = box.querySelector(".sc-check");
+    var res = box.querySelector(".sc-result");
+    var exp = box.querySelector(".sc-explanation");
+    var attempts = 0;
+    var done = false;
+
+    function reveal() {
+      if (exp) { exp.classList.add("sc-show"); }
+      box.querySelectorAll('input[type="radio"]').forEach(function (inp) {
+        if (inp.dataset.correct === "true") {
+          inp.closest(".sc-option").classList.add("sc-correct");
+        }
+      });
+    }
+
+    btn.addEventListener("click", function () {
+      var sel = box.querySelector('input[type="radio"]:checked');
+      if (!sel) {
+        res.className = "sc-result";
+        res.textContent = "Please choose an answer first.";
+        return;
+      }
+      attempts += 1;
+      if (sel.dataset.correct === "true") {
+        res.className = "sc-result sc-ok";
+        res.textContent = "✅ Correct!";
+        if (!done) { solved += 1; done = true; updateScore(); }
+        reveal();
+      } else if (attempts < 2) {
+        res.className = "sc-result sc-no";
+        res.textContent = "❌ Not quite. Have another go.";
+      } else {
+        res.className = "sc-result sc-no";
+        res.textContent = "❌ Not quite. Here is the answer and why.";
+        reveal();
+      }
+    });
+  });
+
+  updateScore();
+});
+</script>

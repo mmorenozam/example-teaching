@@ -1,0 +1,87 @@
+---
+title: "Curriculum"
+subtitle: "From raw data to publication"
+---
+
+The programme has three tracks. **Track A** builds the data skills every analysis depends on, **Track B** covers statistical modelling, and **Track C** turns analyses into publications. Students enter where they need to: a short entry self-check tells them which Track A modules they can skip.
+
+```{mermaid}
+flowchart TB
+  subgraph A["Track A: Data skills"]
+    direction LR
+    A1["A1 R and RStudio"] --> A2["A2 Data wrangling"] --> A3["A3 Exploration and visualisation"] --> A4["A4 Reproducible workflows"]
+  end
+  subgraph B["Track B: Statistical modelling"]
+    direction LR
+    B1["B1 Linear models"] --> B2["B2 Generalized linear models"] --> B3["B3 Mixed models"] --> B4["B4 Advanced mixed models"]
+    B5["B5 Study design and power"]
+  end
+  subgraph C["Track C: From analysis to publication"]
+    direction LR
+    C1["C1 Reporting, figures and tables"] --> C2["C2 Reproducible manuscripts and open science"]
+  end
+  A --> B
+  B --> C
+  classDef default fill:#ffffff,stroke:#333333,color:#000000;
+  style A fill:#ffffff,stroke:#0072B2,stroke-width:2px,color:#000000
+  style B fill:#ffffff,stroke:#D55E00,stroke-width:2px,color:#000000
+  style C fill:#ffffff,stroke:#009E73,stroke-width:2px,color:#000000
+```
+
+## Format
+
+- **Track A** runs as a compact bootcamp at the start of each semester (four sessions), so new PhD researchers are ready for Track B.
+- **Track B** runs weekly over a semester. Modules B1 to B3 build on each other; B4 and B5 can be taken independently once B3 is done.
+- **Track C** consists of two workshops, followed by individual consulting on each student's own manuscript.
+- **Each session** combines a short conceptual input (about 30 to 45 minutes) with hands-on work in R, ideally on the students' own data.
+- **Language:** English. All materials are openly available on this site and on GitHub.
+
+The table for each track below shows how learning outcomes, activities and assessment are aligned.
+
+## Track A: Data skills {#track-a}
+
+::: {.alignment}
+
+| Module | Students will be able to... | Activities | Assessment |
+|:--|:--|:--|:--|
+| **A1 R and RStudio** | write and run R scripts in an RStudio project; use objects, functions and packages | live coding, short exercises in pairs | in-browser exercises with instant feedback |
+| **A2 Data wrangling** | import, clean and reshape data (wide to long) with `dplyr` and `tidyr` | tidy a messy, realistic export (e.g., eye-tracking or behavioural coding) | a tidy dataset ready for modelling |
+| **A3 Exploration and visualisation** | build `ggplot2` figures that show distributions, missing data and grouping structure | "plot before you model" challenge with own data | peer feedback on one figure |
+| **A4 Reproducible workflows** | write Quarto reports, use Git for version control, organise a project so others can rerun it | turn an analysis script into a versioned Quarto report | a report that renders on a colleague's computer |
+
+:::
+
+## Track B: Statistical modelling {#track-b}
+
+::: {.alignment}
+
+| Module | Students will be able to... | Activities | Assessment |
+|:--|:--|:--|:--|
+| **B1 Linear models** | express t-tests, regression, ANOVA and ANCOVA as one linear model; interpret coefficients; check assumptions | refit familiar tests with `lm()` and compare | self-check, interpreting output |
+| **B2 Generalized linear models** | choose a family and link for binary, count and proportion data; interpret results on the link and response scale; detect overdispersion | case studies: choices, vocalisation counts | choosing and justifying a model for a given dataset |
+| **B3 Mixed models** | recognise grouped data; fit and interpret random intercepts, the ICC, LMMs and GLMMs | [sample session](sample-session.qmd), then hands-on with own data | [self-check](self-check.qmd); an analysis plan for own data |
+| **B4 Advanced mixed models** | add random slopes and crossed random effects (e.g., participants and items); handle convergence problems; check models; get started with Bayesian models in `brms` | model clinics on the students' own models | a short model-checking report |
+| **B5 Study design and power** | plan studies with replication and control in mind; run simulation-based power analyses, including for mixed designs | simulate the student's own planned study | a power analysis ready for a proposal or preregistration |
+
+:::
+
+## Track C: From analysis to publication {#track-c}
+
+::: {.alignment}
+
+| Module | Students will be able to... | Activities | Assessment |
+|:--|:--|:--|:--|
+| **C1 Reporting, figures and tables** | report LMMs and GLMMs completely (estimates, uncertainty, random effects, software); produce publication-ready figures (`patchwork`, colour-blind-safe palettes) and tables (`gt`, `modelsummary`) | rework a results section and figure from a recent paper or own draft | a results section and figure from own data, with feedback |
+| **C2 Reproducible manuscripts and open science** | write manuscripts or supplements in Quarto (e.g., APA style for psychology); share code and data on OSF; preregister analyses; respond to statistical reviewer comments | draft a reproducible supplement; role-play a reviewer exchange | capstone (see below) |
+
+:::
+
+## Capstone: a reproducible mini-paper
+
+The programme ends with a short, reproducible report on the student's **own data**: a methods and results section with figures and tables, rendered from code. Students discuss it in an individual consulting appointment. Because this assessment mirrors what they need for their thesis, it rewards exactly the skills the course is meant to build.
+
+## How the programme connects
+
+- **Consulting:** recurring questions from [consulting](consulting.qmd) turn into new short workshops or FAQ entries.
+- **Existing courses:** Track A and B1 build on, and can be coordinated with, the statistics courses already offered in the biology and psychology programmes.
+- **Graduate schools:** modules could be offered as credited courses in the graduate programmes, to be agreed with the programme coordinators.

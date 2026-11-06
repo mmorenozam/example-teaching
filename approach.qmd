@@ -1,0 +1,52 @@
+---
+title: "Teaching approach"
+subtitle: "How the courses are designed, and why"
+---
+
+## 1. Outcomes, activities and assessment are aligned
+
+Every session starts from what students should be able to do afterwards, and the activities and checks are built around that (constructive alignment). In the [sample session](sample-session.qmd), each of the four learning goals is practised in the lecture and checked again in the [self-check](self-check.qmd).
+
+## 2. Concepts before code, plots before models
+
+Students first understand *why* a method is needed, then *how* to run it in R. Every modelling session starts with a plot of the raw data. In the sample session, a plot of lizards grouped by their mothers makes the need for a mixed model obvious before any equation appears.
+
+## 3. Students' own data
+
+From the second session on, students apply each method to their own project, or to a close match when their data are not ready yet. This makes the content immediately useful and reveals the real problems (messy exports, unbalanced designs, convergence issues) that textbook data hide.
+
+## 4. Active learning
+
+Short inputs alternate with hands-on work. Typical formats:
+
+- **Think-pair-share:** "What do you notice in this plot?" before revealing the answer.
+- **Live coding:** students code along; mistakes are made, and fixed, in public.
+- **Pair programming** in the data-skills track.
+- **Model clinics:** students present their model and get feedback from peers and the instructor.
+
+## 5. A mixed audience by design
+
+CBB researchers arrive with very different backgrounds in statistics and programming. The programme handles this by:
+
+- **Modular entry:** a short entry self-check tells students which data-skills modules they can skip.
+- **Examples from all CBB fields:** looking-time data, primate field observations, neural recordings, tracking data.
+- **Several routes to the same content:** slides, worked code, interactive exercises and recordings.
+
+How students prefer to learn is partly shaped by the learning environment (the outer layer of Curry's onion model). Varied formats and well-designed activities are therefore not decoration: they change how students engage.
+
+## 6. Feedback throughout, assessment that matters
+
+- **Formative:** anonymous self-checks with explanations after each session, and peer feedback on figures and models.
+- **Summative:** a reproducible mini-paper on the student's own data (see the [curriculum](curriculum.qmd#capstone-a-reproducible-mini-paper)).
+
+What is assessed drives what is learned. Assessing a realistic analysis of their own data pushes students towards the skills they will actually use.
+
+## 7. Open and reproducible materials
+
+All slides, code and exercises are written in Quarto and R, version-controlled and openly available. The materials themselves model the reproducible practice the course teaches.
+
+## 8. Improving the teaching
+
+- A one-minute feedback form at the end of each session ("What was clearest? What was muddiest?").
+- Self-check results show which concepts need another pass.
+- Questions from consulting reveal gaps in the curriculum and lead to new short workshops.

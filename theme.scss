@@ -1,0 +1,129 @@
+/*-- scss:defaults --*/
+$primary: #1f5f8b;
+$link-color: #1f5f8b;
+$navbar-bg: #ffffff;
+$navbar-fg: #1f2d3d;
+$font-size-base: 1.05rem;
+
+// mermaid diagrams: white boxes, black text
+$mermaid-bg-color: #ffffff;
+$mermaid-node-bg-color: #ffffff;
+$mermaid-node-fg-color: #000000;
+$mermaid-fg-color: #000000;
+$mermaid-label-bg-color: #ffffff;
+$mermaid-label-fg-color: #000000;
+$mermaid-edge-color: #333333;
+
+/*-- scss:rules --*/
+h1, h2, h3 {
+  color: #1f2d3d;
+}
+
+/* cards on the home page */
+.card-box {
+  border: 1px solid #dfe6ee;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  height: 100%;
+  background: #f8fafc;
+}
+
+.card-box h3 {
+  margin-top: 0.2rem;
+  font-size: 1.15rem;
+}
+
+.track-a { border-top: 5px solid #0072B2; }
+.track-b { border-top: 5px solid #D55E00; }
+.track-c { border-top: 5px solid #009E73; }
+
+/* alignment tables */
+.alignment table {
+  font-size: 0.95rem;
+}
+
+.alignment th {
+  background: #eef3f8;
+}
+
+/* self-check questions */
+.selfcheck {
+  border: 1px solid #dfe6ee;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0 1.8rem 0;
+  background: #fbfcfe;
+}
+
+.sc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0.8rem 0;
+}
+
+.sc-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #dfe6ee;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.sc-option input {
+  margin-top: 0.3rem;
+}
+
+.sc-option p {
+  margin: 0;
+}
+
+.sc-option.sc-correct {
+  border-color: #2e7d32;
+  background: #edf7ee;
+}
+
+.sc-check {
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  background: $primary;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sc-result {
+  margin: 0.6rem 0 0 0;
+  font-weight: 600;
+}
+
+.sc-result.sc-ok { color: #2e7d32; }
+.sc-result.sc-no { color: #b23b3b; }
+
+.sc-explanation {
+  display: none;
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 4px solid $primary;
+  background: #eef3f8;
+}
+
+.sc-explanation.sc-show {
+  display: block;
+}
+
+/* make sure diagram labels stay black on white */
+.mermaid .cluster rect {
+  fill: #ffffff !important;
+}
+
+.mermaid .nodeLabel,
+.mermaid .cluster-label,
+.mermaid .cluster-label span,
+.mermaid .label {
+  color: #000000 !important;
+  fill: #000000 !important;
+}

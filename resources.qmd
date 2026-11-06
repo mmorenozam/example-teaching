@@ -1,0 +1,29 @@
+---
+title: "Resources"
+subtitle: "Free books and guides for learning statistics with R"
+---
+
+## Getting started with R
+
+- [R for Data Science](https://r4ds.hadley.nz/){target="_blank"} by Hadley Wickham, Mine Çetinkaya-Rundel and Garrett Grolemund: data import, wrangling and visualisation with the `tidyverse`.
+- [Learning Statistics with R](https://learningstatisticswithr.com/){target="_blank"} by Danielle Navarro: a gentle introduction to statistics and R, written with psychology students in mind.
+- [Modern Statistics with R](https://modernstatisticswithr.com/){target="_blank"} by Måns Thulin: from data handling to more advanced models.
+
+## Visualisation
+
+- [Data Visualization: A Practical Introduction](https://socviz.co/){target="_blank"} by Kieran Healy: making clear, honest figures with `ggplot2`.
+
+## Mixed models
+
+- [GLMM FAQ](https://bbolker.github.io/mixedmodels-misc/glmmFAQ.html){target="_blank"} by Ben Bolker and colleagues: practical answers to common questions about fitting GLMMs in R.
+- *Statistics for Linguists: An Introduction Using R* by Bodo Winter (Routledge, 2019): linear and mixed models explained very clearly, with examples from language research.
+- *Linear Mixed Models for Longitudinal Data* by Geert Verbeke and Geert Molenberghs (Springer, 2000): the theory behind the sample session.
+
+## Bayesian modelling
+
+- [Statistical Rethinking](https://xcelab.net/rm/){target="_blank"} by Richard McElreath: a modern, causal introduction to Bayesian statistics, with free lecture videos.
+
+## Reproducible workflows
+
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/){target="_blank"} by Jenny Bryan: version control for R users.
+- [Quarto](https://quarto.org/){target="_blank"}: documentation for reproducible reports, slides, websites and manuscripts.

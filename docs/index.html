@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bioestadística en R</title>
+<title>Statistics and Data Science Training for CBB – Statistics Training for CBB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,15 +31,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./icon1.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3f060b687105769c1b2ac58bf883fce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -54,28 +55,28 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
-<meta property="og:title" content="Bioestadística en R">
-<meta property="og:description" content="Workshop 2025">
+<meta property="og:title" content="Statistics and Data Science Training for CBB – Statistics Training for CBB">
+<meta property="og:description" content="A teaching concept for PhD researchers in the Campus Research Alliance Cognition, Brain and Behavior">
 <meta property="og:image" content="icon1.png">
-<meta property="og:site_name" content="Bioestadística en R">
+<meta property="og:site_name" content="Statistics Training for CBB">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -85,94 +86,53 @@ ul.task-list li input[type="checkbox"] {
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./icon1.png" alt="" class="navbar-logo">
     </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Statistics Training for CBB</span>
+    </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Inicio</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./recursos.html"> 
-<span class="menu-text">Recursos</span></a>
+    <a class="nav-link" href="./curriculum.html"> 
+<span class="menu-text">Curriculum</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-módulos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Módulos</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-módulos">    
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo1/" target="_blank">
- <span class="dropdown-text">Módulo 1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo2/" target="_blank">
- <span class="dropdown-text">Módulo 2</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo3/" target="_blank">
- <span class="dropdown-text">Módulo 3</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo4/" target="_blank">
- <span class="dropdown-text">Módulo 4</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo5/" target="_blank">
- <span class="dropdown-text">Módulo 5</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo6/" target="_blank">
- <span class="dropdown-text">Módulo 6</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo7/" target="_blank">
- <span class="dropdown-text">Módulo 7</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://mmorenozam.github.io/biohack-modulo8/" target="_blank">
- <span class="dropdown-text">Módulo 8</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ejercicios" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Ejercicios</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-ejercicios">    
-        <li>
-    <a class="dropdown-item" href="./ejercicios_demo.html">
- <span class="dropdown-text">Demo</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ejercicios_m1.html">
- <span class="dropdown-text">Ejercicios Módulo 1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ejercicios_m3.html">
- <span class="dropdown-text">Ejercicios Módulo 3</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ejercicios_m4.html">
- <span class="dropdown-text">Ejercicios Módulo 4</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ejercicios_m5.html">
- <span class="dropdown-text">Ejercicios Módulo 5</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ejercicios_m7.html">
- <span class="dropdown-text">Ejercicios Módulo 7</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./final.html"> 
-<span class="menu-text">Trabajo final</span></a>
+    <a class="nav-link" href="./approach.html"> 
+<span class="menu-text">Teaching approach</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sample-session.html"> 
+<span class="menu-text">Sample session</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./exercises.html"> 
+<span class="menu-text">Exercises</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./self-check.html"> 
+<span class="menu-text">Self-check</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./consulting.html"> 
+<span class="menu-text">Consulting</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -184,35 +144,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contenido</h2>
-   
-  <ul>
-  <li><a href="#anuncios" id="toc-anuncios" class="nav-link active" data-scroll-target="#anuncios">Anuncios</a></li>
-  <li><a href="#descripción-del-curso" id="toc-descripción-del-curso" class="nav-link" data-scroll-target="#descripción-del-curso">Descripción del curso:</a></li>
-  <li><a href="#requisitos" id="toc-requisitos" class="nav-link" data-scroll-target="#requisitos">Requisitos:</a></li>
-  <li><a href="#duración" id="toc-duración" class="nav-link" data-scroll-target="#duración">Duración:</a></li>
-  <li><a href="#modalidad" id="toc-modalidad" class="nav-link" data-scroll-target="#modalidad">Modalidad:</a></li>
-  <li><a href="#horario" id="toc-horario" class="nav-link" data-scroll-target="#horario">Horario:</a></li>
-  <li><a href="#contenidos-del-curso" id="toc-contenidos-del-curso" class="nav-link" data-scroll-target="#contenidos-del-curso">Contenidos del curso</a></li>
-  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de aprendizaje:</a></li>
-  <li><a href="#canales-de-comunicación" id="toc-canales-de-comunicación" class="nav-link" data-scroll-target="#canales-de-comunicación">Canales de comunicación:</a></li>
-  <li><a href="#sobre-el-instructor" id="toc-sobre-el-instructor" class="nav-link" data-scroll-target="#sobre-el-instructor">Sobre el instructor</a></li>
-  </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bioestadística en R</h1>
-<p class="subtitle lead">Workshop 2025</p>
+<h1 class="title">Statistics and Data Science Training for CBB</h1>
+<p class="subtitle lead">A teaching concept for PhD researchers in the Campus Research Alliance Cognition, Brain and Behavior</p>
 </div>
 
 
@@ -229,486 +169,310 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="anuncios" class="level2">
-<h2 class="anchored" data-anchor-id="anuncios">Anuncios</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>PhD researchers in CBB come from psychology, behavioural and cognitive biology, systems neuroscience and data science. They collect very different data, from infant eye-tracking and primate field observations to neural recordings and video tracking, but they share the same journey: <strong>get the data in shape, model it honestly, and publish it</strong>.</p>
+<p>This site describes a modular training programme built around that journey, and how it connects to statistical consulting.</p>
+<section id="three-tracks-one-path" class="level2">
+<h2 class="anchored" data-anchor-id="three-tracks-one-path">Three tracks, one path</h2>
+<div class="grid">
+<div class="g-col-12 g-col-md-4">
+<section id="a.-data-skills" class="level3 card-box track-a">
+<h3 class="anchored" data-anchor-id="a.-data-skills">A. Data skills</h3>
+<p>R programming, data wrangling, exploration and visualisation, and reproducible workflows. Modular: students skip what they already master.</p>
+</section>
 </div>
-<div class="callout-title-container flex-fill">
-Importante
+<div class="g-col-12 g-col-md-4">
+<section id="b.-statistical-modelling" class="level3 card-box track-b">
+<h3 class="anchored" data-anchor-id="b.-statistical-modelling">B. Statistical modelling</h3>
+<p>From linear models to GLMs and mixed models, plus study design and simulation-based power analysis.</p>
+</section>
+</div>
+<div class="g-col-12 g-col-md-4">
+<section id="c.-from-analysis-to-publication" class="level3 card-box track-c">
+<h3 class="anchored" data-anchor-id="c.-from-analysis-to-publication">C. From analysis to publication</h3>
+<p>Reporting statistics, publication-ready figures and tables, reproducible manuscripts and open science.</p>
+</section>
 </div>
 </div>
-<div class="callout-body-container callout-body">
+<p><a href="./curriculum.html" class="btn btn-primary">See the full curriculum →</a></p>
+</section>
+<section id="guiding-principles" class="level2">
+<h2 class="anchored" data-anchor-id="guiding-principles">Guiding principles</h2>
 <ul>
-<li><strong>17.05.2025</strong>:
-<ul>
-<li><p>El video de la clase del 17.05 ya se encuentra en línea.</p></li>
-<li><p>Recuerda que la fecha límite de entrega del trabajo final es el 21.06 hasta la medianoche.</p></li>
-</ul></li>
-<li><strong>15.05.2025</strong>:
-<ul>
-<li>El video de la clase del 15.05 ya se encuentra en línea.</li>
-</ul></li>
-<li><strong>10.05.2025</strong>:
-<ul>
-<li>El video de la clase del 10.05 ya se encuentra en línea.</li>
-</ul></li>
-<li><strong>08.05.2025</strong>:
-<ul>
-<li>El video de la clase del 08.05 ya se encuentra en línea.</li>
-</ul></li>
-<li><strong>26.04.2025</strong>:
-<ul>
-<li>El video de la clase del 26.04 ya se encuentra en línea.</li>
-</ul></li>
-<li><strong>24.04.2025</strong>:
-<ul>
-<li>El video de la clase del 24.04 ya se encuentra en línea.</li>
-</ul></li>
-<li><strong>12.04.2025</strong>:
-<ul>
-<li>Bienvenidos!</li>
-<li>El video de la clase se encuentra ya en línea, chequea la pestaña de Recursos</li>
-</ul></li>
+<li><strong>Concepts before code, plots before models.</strong> Every modelling session starts with a picture of the data.</li>
+<li><strong>Your own data.</strong> From the second session on, students work on their own projects.</li>
+<li><strong>Active learning.</strong> Short inputs, then hands-on work, discussion and feedback.</li>
+<li><strong>Aligned outcomes, activities and assessment.</strong> Each session states what students will be able to do, and checks it.</li>
+<li><strong>Open and reproducible.</strong> All materials, code and data examples are openly available.</li>
 </ul>
-<!-- Note that there are five types of callouts, including: -->
-<!-- `note`, `warning`, `important`, `tip`, and `caution`. -->
-</div>
-</div>
+<p><a href="./approach.html">Read more about the teaching approach →</a></p>
 </section>
-<section id="descripción-del-curso" class="level2">
-<h2 class="anchored" data-anchor-id="descripción-del-curso">Descripción del curso:</h2>
-<p>El presente curso de estadística tiene cómo propósito el dar un enfoque práctico de metodologías estadísticas comúnmente empleadas en el campo de la biología y la agricultura sin hacer mayor énfasis en teoría y resolución de problemas a mano como usualmente ocurre en el desenvolvimiento de contenidos de cursos tradicionales en estadística. En su lugar, el currículum aquí propuesto busca el dar una visión práctica a sus participantes de cómo los datos pueden ser analizados en base a un orden cronológico dentro de una investigación empezando por la definición de la pregunta objeto de esta, pasando por la decisión del diseño experimental más adecuado y finalizando con su correcto análisis e interpretación de los resultados. En mayor detalle, se abarcan además problemas comunes en el análisis de datos como lo son los análisis exploratorios de carácter formal tales como estadísticos descriptivos, patrones de pérdida de observaciones y visualizaciones; y aquellos de carácter operacional como la preparación y limpieza de datos, buenas prácticas de documentación y programación. Es por ello por lo que se alienta a los participantes a usar sus propios datos a la par de los ejemplos que se pondrán a disposición con el fin de aprovechar el carácter práctico del curso que incluye un comprensivo recorrido en el uso de R, el cual es al momento el lenguaje de programación estadística de mayor predilección en diversas ramas de las ciencias biológicas tanto en la academia como en la industria.</p>
+<section id="explore" class="level2">
+<h2 class="anchored" data-anchor-id="explore">Explore</h2>
+<div class="grid">
+<div class="g-col-12 g-col-md-4">
+<section id="sample-session" class="level3 card-box">
+<h3 class="anchored" data-anchor-id="sample-session">Sample session</h3>
+<p>The demonstration lecture <em>Introduction to generalized linear mixed models</em>, and how it fits into the course.</p>
+<p><a href="./sample-session.html">Go to the sample session</a></p>
 </section>
-<section id="requisitos" class="level2">
-<h2 class="anchored" data-anchor-id="requisitos">Requisitos:</h2>
-<ul>
-<li>Computador con al menos 2 GB de RAM y <strong>procesador de 64 bits</strong></li>
-</ul>
+</div>
+<div class="g-col-12 g-col-md-4">
+<section id="exercises-and-self-check" class="level3 card-box">
+<h3 class="anchored" data-anchor-id="exercises-and-self-check">Exercises and self-check</h3>
+<p>Interactive R exercises that run in the browser, and a short anonymous quiz with explanations.</p>
+<p><a href="./exercises.html">Try the exercises</a> · <a href="./self-check.html">Take the self-check</a></p>
 </section>
-<section id="duración" class="level2">
-<h2 class="anchored" data-anchor-id="duración">Duración:</h2>
-<p>20 horas de clases online en tiempo real, y</p>
-<p>20 horas autónomo-prácticas, dando un total de</p>
-<p><strong>40 horas</strong></p>
+</div>
+<div class="g-col-12 g-col-md-4">
+<section id="consulting" class="level3 card-box">
+<h3 class="anchored" data-anchor-id="consulting">Consulting</h3>
+<p>How individual statistical consulting works, and how it feeds back into the teaching.</p>
+<p><a href="./consulting.html">About consulting</a></p>
 </section>
-<section id="modalidad" class="level2">
-<h2 class="anchored" data-anchor-id="modalidad">Modalidad:</h2>
-<p>100% Online</p>
-</section>
-<section id="horario" class="level2">
-<h2 class="anchored" data-anchor-id="horario">Horario:</h2>
-<p>Sábados: 12 y 26 de abril, 10 y 17 de mayo de 9H00 a 12H30</p>
-<p>Jueves: 24 de abril, 8 y 15 de mayo de 18H30 a 20H30</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
 </div>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>No hay clases los feriados de Semana Santa y Día del Trabajo.</strong></p>
-</div>
-</div>
-</section>
-<section id="contenidos-del-curso" class="level2">
-<h2 class="anchored" data-anchor-id="contenidos-del-curso">Contenidos del curso</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 53%">
-<col style="width: 46%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Módulo</th>
-<th>Contenido</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Módulo 1: Generalidades e Introducción a R</p>
-<p>Duración: 2 horas</p></td>
-<td><ol type="1">
-<li><p>Generalidades</p></li>
-<li><p>Introducción a R</p></li>
-<li><p>Tipos de datos en R</p></li>
-<li><p>Operadores en R</p></li>
-<li><p>Tipos de objetos en R</p></li>
-<li><p>Paquetes y librerías</p></li>
-<li><p>Operaciones básicas</p></li>
-<li><p>Operaciones estadísticas básicas</p></li>
-<li><p>Estadísticos descriptivos</p></li>
-</ol></td>
-</tr>
-<tr class="even">
-<td><p>Módulo 2: Proyectos en R y buenas prácticas de programación</p>
-<p>Duración: 0.5 horas</p></td>
-<td><ol type="1">
-<li><p>Proyectos en R</p></li>
-<li><p>Reglas básicas para programar y nombrar objetos en R</p></li>
-<li><p>Buenas prácticas de programación</p></li>
-</ol></td>
-</tr>
-<tr class="odd">
-<td><p>Módulo 3: Introducción al <code>{tidyverse}</code></p>
-<p>Duración: 2.5 horas</p></td>
-<td><ol type="1">
-<li><p>Tipos de tablas</p></li>
-<li><p>Tidy data</p></li>
-<li><p>El <code>{tidyverse}</code></p></li>
-<li><p>Importación y exportación de datos</p></li>
-<li><p>Operaciones con tablas de datos</p></li>
-</ol></td>
-</tr>
-<tr class="even">
-<td><p>Módulo 4: Visualización de datos con <code>{ggplot2}</code></p>
-<p>Duración: 2.5 horas</p></td>
-<td><ol type="1">
-<li><p>Funciones de <code>{ggplot2}</code></p></li>
-<li><p>Geometrías</p></li>
-<li><p>Estéticas de geometrías</p></li>
-<li><p>Formato de figuras</p></li>
-<li><p>Análisis Exploratorio</p></li>
-</ol></td>
-</tr>
-<tr class="odd">
-<td><p>Módulo 5: Introducción a la Estadística Inferencial con R</p>
-<p>Duración: 5 horas</p></td>
-<td><ol type="1">
-<li><p>Muestras, poblaciones y muestreos</p></li>
-<li><p>Parámetros poblaciones y de muestro</p></li>
-<li><p>Estimación de parámetros de población.</p></li>
-<li><p>Intervalos de confianza</p></li>
-<li><p>Pruebas de hipótesis</p></li>
-<li><p>Tipos de errores</p></li>
-<li><p>Poder de una prueba estadística</p></li>
-<li><p>Tamaño del efecto</p></li>
-<li><p>Colas de una prueba</p></li>
-<li><p>Pruebas estadísticas paramétricas simples</p></li>
-<li><p>Pruebas estadísticas no paramétricas</p></li>
-<li><p>Introducción al Análisis de Varianza (ANOVA)</p></li>
-</ol></td>
-</tr>
-<tr class="even">
-<td><p>Módulo 6: Principios básicos de Diseño de Experimentos</p>
-<p>Duración: 2.5 horas</p></td>
-<td><ol type="1">
-<li><p>Tipos de estudios</p></li>
-<li><p>Pilares del diseño de experimentos</p></li>
-<li><p>Repeticiones</p></li>
-<li><p>Tamaño de muestra</p></li>
-<li><p>Diseño Completamente al Azar (DCA)</p></li>
-<li><p>Diseño en Bloques Completamente al Azar (DBCA)</p></li>
-<li><p>Diseño Factorial Completo (DFC)</p></li>
-<li><p>Diseño Cuadrado Latino (DCL)</p></li>
-<li><p>Otros diseños experimentales</p></li>
-</ol></td>
-</tr>
-<tr class="odd">
-<td><p>Módulo 7: Otros métodos estadísticos comúnmente usados en Biología</p>
-<p>Duración: 3 horas</p></td>
-<td><ol type="1">
-<li><p>Regresión lineal simple y múltiple</p></li>
-<li><p>Introducción a modelos lineales generalizados</p></li>
-<li><p>Análisis de componentes principales</p></li>
-</ol></td>
-</tr>
-<tr class="even">
-<td><p>Módulo 8: Introducción a la creación de reportes con Quarto</p>
-<p>Duración: 2 horas</p></td>
-<td><ol type="1">
-<li><p>Introducción a Quarto y Rmarkdown</p></li>
-<li><p>Estructura de un documento de Quarto</p></li>
-<li><p>Generación de nuestro primer reporte</p></li>
-<li><p>Tipos de documentos en Quarto</p></li>
-</ol></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de aprendizaje:</h2>
-<p>Al término del curso, el estudiante deberá ser capaz de:</p>
-<ul>
-<li><p>Realizar operaciones básicas en R, tales como: cargar, modificar, limpiar y guardar tablas de datos.</p></li>
-<li><p>Realizar gráficos de manera profesional usando R.</p></li>
-<li><p>Planificar y decidir que tipo de diseño experimental deberá usar para llevar a cabo un estudio, dependiendo de la hipótesis del mismo.</p></li>
-<li><p>Llevar a cabo análisis exploratorio de datos.</p></li>
-<li><p>Llevar a cabo, interpretar y reportar los resultados de metodologías estadísticas tales como: pruebas t, pruebas no paramétricas y análisis de varianza.</p></li>
-<li><p>Realizar reportes estadísticos básicos en R.</p></li>
-</ul>
-</section>
-<section id="canales-de-comunicación" class="level2">
-<h2 class="anchored" data-anchor-id="canales-de-comunicación">Canales de comunicación:</h2>
-<ul>
-<li><p>Preguntas durante las sesiones</p></li>
-<li><p>Consultas dirigidas al instructor al correo electrónico: mmorenozambrano@gmail.com</p></li>
-</ul>
-</section>
-<section id="sobre-el-instructor" class="level2">
-<h2 class="anchored" data-anchor-id="sobre-el-instructor">Sobre el instructor</h2>
-<p>Mauricio Moreno, PhD</p>
-<p>Ingeniero en Biotecnología (Universidad de las Fuerzas Armadas - ESPE), cuenta con un máster en Estadística con mención en Biometría (KU Leuven, Bélgica) y un doctorado en Bioinformática (Jacobs University Bremen, Alemania), posee más de diez años de experiencia en programación estadística en R. Ha trabajado como consultor independiente, profesor, analista de estadísticas ambientales e investigador postdoctoral. Actualmente, ocupa el puesto de Científico Bioestadístico en la función de Soluciones de Campo en Bayer Crop Science, liderando proyectos de investigación y desarrollo incluyendo la migración de procesos estadísticos a la nube y determinación de tamaños de muestra mediante simulaciones Montecarlo basados en cadenas de Markov.</p>
 
 
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiado");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiado");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -716,186 +480,175 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Teaching concept proposal by Mauricio Moreno, PhD. Not an official page of the University of Göttingen or the German Primate Center.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
